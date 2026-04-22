@@ -584,7 +584,7 @@
     const html = document.documentElement;
     html.setAttribute('lang', lang);
     html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-    document.getElementById('langBtn').textContent = lang === 'en' ? 'عربي' : 'English';
+    document.getElementById('langBtn').textContent = lang === 'en' ? 'Ar' : 'En';
 
     document.querySelectorAll('[data-en]').forEach(el => {
       const val = el.getAttribute('data-' + lang);
