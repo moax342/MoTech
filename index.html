@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mohammed Altoum — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream: #080c10;
+    --cream-dark: #0d1117;
+    --ink: #e8edf3;
+    --ink-light: #a0b0c0;
+    --ink-faint: #5a6a7a;
+    --red: #00d4ff;
+    --gold: #ff6b35;
+    --rule: #1a2332;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Libre Baskerville', Georgia, serif;
+    overflow-x: hidden;
+  }
+
+  /* ── PAPER TEXTURE ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.07'/%3E%3C/svg%3E");
+    opacity: 0.6;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    position: relative; z-index: 10;
+    border-bottom: 3px double var(--ink);
+    padding: 0 3rem;
+  }
+  .masthead-top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .masthead-top .date { color: var(--ink-light); }
+  .masthead-center {
+    text-align: center; padding: 2rem 0 1.5rem;
+  }
+  .masthead-eyebrow {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 0.75rem;
+    display: flex; align-items: center; justify-content: center; gap: 1rem;
+  }
+  .masthead-eyebrow::before, .masthead-eyebrow::after {
+    content: ''; display: block; width: 60px; height: 1px; background: var(--rule);
+  }
+  .masthead-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(4rem, 10vw, 9rem);
+    font-weight: 900; line-height: 0.88;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .masthead-name .first { display: block; }
+  .masthead-name .last {
+    display: block;
+    -webkit-text-stroke: 2px var(--ink);
+    color: transparent;
+  }
+  .masthead-sub {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--ink-light); margin-top: 1.25rem;
+  }
+  .masthead-nav {
+    display: flex; justify-content: center;
+    border-top: 1px solid var(--rule);
+    gap: 0;
+  }
+  .masthead-nav a {
+    padding: 0.65rem 1.75rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    text-decoration: none; color: var(--ink-light);
+    border-right: 1px solid var(--rule);
+    transition: background 0.2s, color 0.2s;
+  }
+  .masthead-nav a:first-child { border-left: 1px solid var(--rule); }
+  .masthead-nav a:hover { background: var(--ink); color: var(--cream); }
+
+  /* ── HERO SPREAD ── */
+  #hero {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1fr 2px 1.6fr;
+    gap: 0; padding: 0 3rem;
+    border-bottom: 2px solid var(--ink);
+  }
+  .hero-left {
+    padding: 3rem 3rem 3rem 0;
+    border-right: 2px solid var(--ink);
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .hero-kicker {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 1rem;
+  }
+  .hero-headline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700; line-height: 1.25;
+    margin-bottom: 1.5rem;
+  }
+  .hero-headline em { font-style: italic; color: var(--ink-light); }
+  .hero-body {
+    font-size: 0.88rem; line-height: 1.9; color: var(--ink-light);
+    margin-bottom: 2rem;
+    border-left: 3px solid var(--red);
+    padding-left: 1.25rem;
+  }
+  .pull-quote {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.2rem; font-style: italic; font-weight: 700;
+    line-height: 1.5; color: var(--ink);
+    border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+    padding: 1.25rem 0; margin-top: 2rem;
+  }
+  .hero-divider { background: var(--ink); width: 2px; }
+  .hero-right {
+    padding: 3rem 0 3rem 3rem;
+  }
+  .hero-right-top {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0; border-bottom: 1px solid var(--rule); margin-bottom: 2rem;
+  }
+  .stat-box {
+    padding: 1.5rem;
+    border-right: 1px solid var(--rule);
+    text-align: center;
+  }
+  .stat-box:last-child { border-right: none; }
+  .stat-big {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.5rem; font-weight: 900; line-height: 1;
+    color: var(--ink);
+  }
+  .stat-small {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-faint); margin-top: 0.4rem;
+  }
+  .badges-grid {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;
+  }
+  .badge {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.35rem 0.8rem;
+    border: 1px solid var(--ink); color: var(--ink);
+    transition: all 0.2s;
+  }
+  .badge:hover { background: var(--ink); color: var(--cream); }
+  .badge.red { border-color: var(--red); color: var(--red); }
+  .badge.red:hover { background: var(--red); color: var(--cream); }
+  .location-block {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--ink-faint);
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .location-block::before { content: '◆'; color: var(--gold); font-size: 0.5rem; }
+
+  /* ── SECTION WRAPPER ── */
+  .page { position: relative; z-index: 1; padding: 0 3rem; }
+  .section-rule {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 2rem 0 1.5rem;
+    border-bottom: 3px double var(--ink);
+    margin-bottom: 2.5rem;
+  }
+  .section-num {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 900; letter-spacing: -0.01em;
+  }
+  .section-title em { font-style: italic; color: var(--ink-light); }
+  .section-rule-line { flex: 1; height: 1px; background: var(--rule); }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--cream); padding-bottom: 4rem; }
+  .exp-columns { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0; }
+  .exp-col-divider { background: var(--rule); }
+  .exp-col { display: flex; flex-direction: column; gap: 0; }
+  .exp-col:first-child { padding-right: 2.5rem; }
+  .exp-col:last-child { padding-left: 2.5rem; }
+
+  .exp-card {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    transition: padding-left 0.2s;
+  }
+  .exp-card:hover { padding-left: 0.75rem; }
+  .exp-card:hover::before {
+    content: '';
+    position: absolute; left: 0; top: 1.75rem; bottom: 1.75rem;
+    width: 3px; background: var(--red);
+  }
+  .exp-card:last-child { border-bottom: none; }
+  .exp-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem; gap: 1rem; }
+  .exp-role {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.05rem; font-weight: 700; line-height: 1.3;
+  }
+  .exp-period {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.1em;
+    color: var(--ink-faint); white-space: nowrap;
+    padding-top: 0.2rem;
+  }
+  .exp-company {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 0.75rem;
+  }
+  .exp-bullets {
+    list-style: none; font-size: 0.8rem;
+    line-height: 1.85; color: var(--ink-light);
+  }
+  .exp-bullets li { padding-left: 1.2rem; position: relative; }
+  .exp-bullets li::before {
+    content: '—'; position: absolute; left: 0;
+    color: var(--ink-faint);
+  }
+
+  /* ── SKILLS ── */
+  #skills {
+    background: #050810; color: var(--ink);
+    padding-bottom: 4rem;
+  }
+  #skills .section-rule { border-bottom-color: rgba(255,255,255,0.1); }
+  #skills .section-title { color: var(--ink); }
+  #skills .section-num { color: rgba(232,224,208,0.3); }
+  #skills .section-rule-line { background: rgba(255,255,255,0.1); }
+  .skills-spread {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; border: 1px solid rgba(232,224,208,0.1);
+  }
+  .skill-col {
+    padding: 2rem 1.75rem;
+    border-right: 1px solid rgba(232,224,208,0.1);
+  }
+  .skill-col:last-child { border-right: none; }
+  .skill-col-head {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(232,224,208,0.1);
+  }
+  .skill-list { list-style: none; }
+  .skill-list li {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 0.8rem; color: rgba(176,164,144,0.8);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(232,224,208,0.06);
+    line-height: 1.4;
+    transition: color 0.2s;
+  }
+  .skill-list li:hover { color: var(--ink); }
+  .skill-list li:last-child { border-bottom: none; }
+
+  /* ── CERTIFICATIONS ── */
+  #certifications { background: var(--cream); padding-bottom: 4rem; }
+  .certs-masonry {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 2px solid var(--ink);
+  }
+  .cert-card {
+    padding: 1.5rem 1.75rem;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    transition: background 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .cert-card::after {
+    content: attr(data-num);
+    position: absolute; right: 1rem; bottom: -0.5rem;
+    font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 900;
+    color: rgba(232,224,208,0.04); line-height: 1; pointer-events: none;
+  }
+  .cert-card:hover { background: var(--cream-dark); }
+  .cert-card:nth-child(3n) { border-right: none; }
+  .cert-issuer-badge {
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 0.6rem;
+  }
+  .cert-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.95rem; font-weight: 700; line-height: 1.35;
+    margin-bottom: 0.5rem;
+  }
+  .cert-date {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.1em;
+    color: var(--ink-faint); margin-bottom: 0.6rem;
+  }
+  .cert-skills-text {
+    font-size: 0.72rem; color: var(--ink-light);
+    line-height: 1.6; font-style: italic;
+  }
+
+  /* ── EDUCATION ── */
+  #education {
+    background: var(--cream-dark);
+    padding-bottom: 4rem;
+    border-top: 3px double var(--ink);
+    border-bottom: 3px double var(--ink);
+  }
+  .edu-layout {
+    display: grid; grid-template-columns: 1fr 2px 1fr; gap: 0; align-items: center;
+  }
+  .edu-left { padding-right: 3rem; }
+  .edu-ornament {
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem; font-weight: 900; line-height: 0.85;
+    color: rgba(232,224,208,0.06); margin-bottom: -1rem;
+    letter-spacing: -0.05em;
+  }
+  .edu-degree-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700; line-height: 1.3; margin-bottom: 0.75rem;
+  }
+  .edu-school-name {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 0.5rem;
+  }
+  .edu-dept {
+    font-size: 0.82rem; color: var(--ink-light); line-height: 1.7;
+  }
+  .edu-divider { background: var(--rule); }
+  .edu-right {
+    padding-left: 3rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+  .edu-quote {
+    font-size: 1.15rem; line-height: 1.7; color: var(--ink-light);
+    margin-bottom: 1rem;
+  }
+  .edu-quote strong { font-style: normal; color: var(--ink); }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--cream); padding-bottom: 5rem; text-align: center; }
+  .contact-headline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    font-weight: 900; line-height: 0.9;
+    letter-spacing: -0.03em; margin-bottom: 1.5rem;
+  }
+  .contact-headline span {
+    -webkit-text-stroke: 2px var(--ink);
+    color: transparent;
+  }
+  .contact-sub {
+    font-size: 0.88rem; color: var(--ink-light);
+    max-width: 440px; margin: 0 auto 2.5rem; line-height: 1.8;
+  }
+  .contact-row { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .contact-btn {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 0.85rem 2.5rem;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .contact-btn-fill { background: var(--ink); color: var(--cream); }
+  .contact-btn-fill:hover { background: var(--red); color: var(--cream); }
+  .contact-btn-outline {
+    border: 1px solid var(--ink); color: var(--ink);
+  }
+  .contact-btn-outline:hover { background: var(--ink); color: var(--cream); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 3px double var(--ink);
+    padding: 1.5rem 3rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--ink-faint);
+    position: relative; z-index: 1;
+  }
+  .footer-ornament { color: var(--gold); font-size: 1rem; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .masthead-name { animation: slideIn 0.9s ease both; }
+  .masthead-eyebrow { animation: slideIn 0.6s ease both; }
+  .masthead-sub { animation: slideIn 0.9s 0.3s ease both; }
+
+  @media (max-width: 900px) {
+    .masthead { padding: 0 1.5rem; }
+    .page { padding: 0 1.5rem; }
+    #hero { grid-template-columns: 1fr; padding: 0 1.5rem; }
+    .hero-left { padding: 2rem 0; border-right: none; border-bottom: 1px solid var(--rule); }
+    .hero-right { padding: 2rem 0; }
+    .hero-divider { display: none; }
+    .exp-columns { grid-template-columns: 1fr; }
+    .exp-col-divider { display: none; }
+    .exp-col:first-child { padding-right: 0; }
+    .exp-col:last-child { padding-left: 0; }
+    .skills-spread { grid-template-columns: 1fr 1fr; }
+    .skill-col:nth-child(2n) { border-right: none; }
+    .skill-col:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,0.12); }
+    .certs-masonry { grid-template-columns: 1fr 1fr; }
+    .cert-card:nth-child(3n) { border-right: 1px solid var(--rule); }
+    .cert-card:nth-child(2n) { border-right: none; }
+    .edu-layout { grid-template-columns: 1fr; }
+    .edu-divider { display: none; }
+    .edu-left { padding-right: 0; margin-bottom: 2rem; }
+    .edu-right { padding-left: 0; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .masthead-nav { flex-wrap: wrap; }
+  }
+  @media (max-width: 600px) {
+    .skills-spread { grid-template-columns: 1fr; }
+    .certs-masonry { grid-template-columns: 1fr; }
+    .cert-card:nth-child(n) { border-right: none; }
+    .hero-right-top { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-top">
+    <span>Baghdad · Iraq</span>
+    <span class="date">Est. 2014 · Updated 2026</span>
+    <span>IT & Cybersecurity</span>
+  </div>
+  <div class="masthead-center">
+    <div class="masthead-eyebrow">Portfolio & Curriculum Vitae</div>
+    <div class="masthead-name">
+      <span class="first">Mohammed</span>
+      <span class="last">Altoum</span>
+    </div>
+    <div class="masthead-sub">IT Manager &ensp;·&ensp; Certified Ethical Hacker &ensp;·&ensp; System Administrator</div>
+  </div>
+  <nav class="masthead-nav">
+    <a href="#hero">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div id="hero" class="page" style="padding-left:3rem;padding-right:3rem;">
+  <div class="hero-left">
+    <div>
+      <div class="hero-kicker">Featured Profile</div>
+      <h1 class="hero-headline">
+        The man who makes <em>complex technology</em><br>
+        feel effortlessly simple
+      </h1>
+      <p class="hero-body">
+        I'm an IT professional based in Baghdad who enjoys helping people feel more confident with technology. With over a decade of hands-on experience spanning telecom, fintech, and enterprise IT, I bridge the gap between infrastructure and the people who depend on it.
+      </p>
+    </div>
+    <blockquote class="pull-quote">
+      "Happy to share that I earned a CEH from Pearson — 4 courses with hands-on labs."
+    </blockquote>
+  </div>
+
+  <div class="hero-divider"></div>
+
+  <div class="hero-right">
+    <div class="hero-right-top">
+      <div class="stat-box">
+        <div class="stat-big">10+</div>
+        <div class="stat-small">Certifications</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-big">7+</div>
+        <div class="stat-small">Years Active</div>
+      </div>
+    </div>
+
+    <div class="badges-grid">
+      <span class="badge red">CEH Certified</span>
+      <span class="badge red">CompTIA Sec+</span>
+      <span class="badge">Google Cybersecurity</span>
+      <span class="badge">IBM Ethical Hacking</span>
+      <span class="badge">Odoo ERP Admin</span>
+      <span class="badge">Office 365</span>
+      <span class="badge">Active Directory</span>
+      <span class="badge">TryHackMe</span>
+    </div>
+
+    <div class="location-block">Baghdad, Iraq &ensp;·&ensp; Hilal Al-Sharq Co. &ensp;·&ensp; IT Manager</div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="page">
+  <div class="section-rule">
+    <span class="section-num">I.</span>
+    <h2 class="section-title">Professional <em>Experience</em></h2>
+    <div class="section-rule-line"></div>
+  </div>
+
+  <div class="exp-columns">
+    <div class="exp-col">
+
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-role">IT Manager</div>
+          <div class="exp-period">Nov 2024 – Present</div>
+        </div>
+        <div class="exp-company">Hilal Al-Sharq Co. · Baghdad</div>
+        <ul class="exp-bullets">
+          <li>System Admin / Odoo Functional / Office 365 Admin</li>
+          <li>Managing full IT infrastructure, networks, and enterprise applications</li>
+          <li>Leading digital transformation strategy</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-role">System Administrator</div>
+          <div class="exp-period">Nov 2023 – Nov 2024</div>
+        </div>
+        <div class="exp-company">Hilal Al-Sharq Co. · Baghdad</div>
+        <ul class="exp-bullets">
+          <li>Provided comprehensive technical support</li>
+          <li>Resolved hardware, software, and network issues end-to-end</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-role">IT Support Specialist</div>
+          <div class="exp-period">Sep 2022 – Nov 2023</div>
+        </div>
+        <div class="exp-company">Hilal Al-Sharq Co. · Baghdad</div>
+        <ul class="exp-bullets">
+          <li>Technical support, hardware/software/network troubleshooting</li>
+          <li>Security implementation to protect data and prevent breaches</li>
+          <li>Staff training on new technologies and compliance</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-role">IT Support Specialist</div>
+          <div class="exp-period">2021 – 2022</div>
+        </div>
+        <div class="exp-company">Athar-Alhayat (KDD Iraq) · Baghdad</div>
+        <ul class="exp-bullets">
+          <li>Odoo System Admin and Active Directory management</li>
+          <li>Security measures and Microsoft 365 compliance enforcement</li>
+          <li>End-user technical support and training</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="exp-col-divider"></div>
+
+    <div class="exp-col">
+
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-role">Acting Back Office Supervisor</div>
+          <div class="exp-period">2019 – 2021</div>
+        </div>
+        <div class="exp-company">MTN Sudan · Khartoum</div>
+        <ul class="exp-bullets">
+          <li>Channel performance analytics → 25% improvement in operations</li>
+          <li>100% SLA compliance, team performance elevated by 25%</li>
+          <li>90% of team ranked among top performers on company metrics</li>
+          <li>100% compliance for overdue account collections</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-role">Back Office Coordinator</div>
+          <div class="exp-period">2018 – 2019</div>
+        </div>
+        <div class="exp-company">MTN Sudan · Khartoum</div>
+        <ul class="exp-bullets">
+          <li>100% accuracy on MTN Fintech service requests</li>
+          <li>All resolved complaints completed within defined SLA</li>
+          <li>Reported compliance concerns, reducing fraud by 10%</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-role">Technical Engineer</div>
+          <div class="exp-period">2016 – 2018</div>
+        </div>
+        <div class="exp-company">Vision Valley · Khartoum</div>
+        <ul class="exp-bullets">
+          <li>Network performance monitoring and optimization</li>
+          <li>Configured telecom equipment for major carriers</li>
+          <li>Implemented security measures against unauthorized access</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-role">Customer Service Representative</div>
+          <div class="exp-period">2014 – 2016</div>
+        </div>
+        <div class="exp-company">MTN Sudan · Khartoum</div>
+        <ul class="exp-bullets">
+          <li>95% of customer requests resolved within SLA</li>
+          <li>Handled recharge data with full accuracy</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="page">
+  <div class="section-rule">
+    <span class="section-num">II.</span>
+    <h2 class="section-title" style="color:var(--ink);">Technical <em style="color:var(--ink-light)">Arsenal</em></h2>
+    <div class="section-rule-line"></div>
+  </div>
+
+  <div class="skills-spread">
+    <div class="skill-col">
+      <div class="skill-col-head">Offensive Security</div>
+      <ul class="skill-list">
+        <li>Metasploit Framework</li>
+        <li>Burp Suite</li>
+        <li>Hydra / Hashcat</li>
+        <li>John the Ripper</li>
+        <li>SQL Injection</li>
+        <li>XSS Attacks</li>
+        <li>Reverse Shell</li>
+        <li>Privilege Escalation</li>
+        <li>OpenVAS</li>
+      </ul>
+    </div>
+    <div class="skill-col">
+      <div class="skill-col-head">Infrastructure & Defence</div>
+      <ul class="skill-list">
+        <li>Active Directory</li>
+        <li>Windows Server</li>
+        <li>Linux Administration</li>
+        <li>Network Security</li>
+        <li>Firewall Configuration</li>
+        <li>IDS / IPS</li>
+        <li>Office 365 Admin</li>
+        <li>SIEM Platforms</li>
+      </ul>
+    </div>
+    <div class="skill-col">
+      <div class="skill-col-head">Enterprise Systems</div>
+      <ul class="skill-list">
+        <li>Odoo ERP (Functional)</li>
+        <li>System Administration</li>
+        <li>Network Administration</li>
+        <li>Hardware Troubleshooting</li>
+        <li>Software Deployment</li>
+        <li>Help Desk Support</li>
+        <li>Telecom Equipment</li>
+      </ul>
+    </div>
+    <div class="skill-col">
+      <div class="skill-col-head">Analytical & Leadership</div>
+      <ul class="skill-list">
+        <li>Python Scripting</li>
+        <li>Microsoft Excel</li>
+        <li>Team Leadership</li>
+        <li>Problem Solving</li>
+        <li>AI Tools</li>
+        <li>Customer Relations</li>
+        <li>SLA Management</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="page">
+  <div class="section-rule">
+    <span class="section-num">III.</span>
+    <h2 class="section-title">Credentials & <em>Certifications</em></h2>
+    <div class="section-rule-line"></div>
+  </div>
+
+  <div class="certs-masonry">
+    <div class="cert-card" data-num="01">
+      <div class="cert-issuer-badge">Google</div>
+      <div class="cert-name">Google Cybersecurity Specialization</div>
+      <div class="cert-date">March 2026</div>
+      <div class="cert-skills-text">Security Fundamentals, Network Security, SIEM</div>
+    </div>
+    <div class="cert-card" data-num="02">
+      <div class="cert-issuer-badge">CompTIA / Packt</div>
+      <div class="cert-name">Security+ Certification (SY0-701)</div>
+      <div class="cert-date">March 2026</div>
+      <div class="cert-skills-text">Threat Analysis, Cryptography, Identity Management</div>
+    </div>
+    <div class="cert-card" data-num="03">
+      <div class="cert-issuer-badge">EC-Council</div>
+      <div class="cert-name">Ethical Hacking Essentials (EHE)</div>
+      <div class="cert-date">March 2026</div>
+      <div class="cert-skills-text">Penetration Testing, Vulnerability Assessment</div>
+    </div>
+    <div class="cert-card" data-num="04">
+      <div class="cert-issuer-badge">Pearson</div>
+      <div class="cert-name">Certified Ethical Hacker (CEH)</div>
+      <div class="cert-date">March 2026</div>
+      <div class="cert-skills-text">Burp Suite · AI · Active Directory · Hydra · Hashcat · John the Ripper · Metasploit · Python · SQL Injection · XSS · Reverse Shell</div>
+    </div>
+    <div class="cert-card" data-num="05">
+      <div class="cert-issuer-badge">IBM</div>
+      <div class="cert-name">Ethical Hacking with Open Source Tools</div>
+      <div class="cert-date">March 2026</div>
+      <div class="cert-skills-text">OpenVAS, AI-assisted analysis</div>
+    </div>
+    <div class="cert-card" data-num="06">
+      <div class="cert-issuer-badge">TryHackMe</div>
+      <div class="cert-name">Jr Penetration Tester</div>
+      <div class="cert-date">February 2026</div>
+      <div class="cert-skills-text">Metasploit · Burp Suite · Hydra · John the Ripper · SQL Injection · Privilege Escalation</div>
+    </div>
+    <div class="cert-card" data-num="07">
+      <div class="cert-issuer-badge">TryHackMe</div>
+      <div class="cert-name">Web Fundamentals Certificate</div>
+      <div class="cert-date">February 2026</div>
+      <div class="cert-skills-text">Burp Suite · XSS · Reverse Shell</div>
+    </div>
+    <div class="cert-card" data-num="08">
+      <div class="cert-issuer-badge">TryHackMe</div>
+      <div class="cert-name">Cyber Security 101 Certificate</div>
+      <div class="cert-date">February 2026</div>
+      <div class="cert-skills-text">Core cybersecurity concepts and fundamentals</div>
+    </div>
+    <div class="cert-card" data-num="09">
+      <div class="cert-issuer-badge">TryHackMe</div>
+      <div class="cert-name">Pre Security Certificate</div>
+      <div class="cert-date">2026</div>
+      <div class="cert-skills-text">Linux · Windows · Networking foundations</div>
+    </div>
+    <div class="cert-card" data-num="10">
+      <div class="cert-issuer-badge">Google</div>
+      <div class="cert-name">Google IT Support</div>
+      <div class="cert-date">November 2023</div>
+      <div class="cert-skills-text">System Admin · Linux · Network Administration · Network Security</div>
+    </div>
+    <div class="cert-card" data-num="11">
+      <div class="cert-issuer-badge">Volunteer</div>
+      <div class="cert-name">Program Coordinator</div>
+      <div class="cert-date">Community Impact</div>
+      <div class="cert-skills-text">Led two impactful community programs — 95% of projects delivered on time</div>
+    </div>
+    <div class="cert-card" data-num="12" style="background:#0d1117;">
+      <div class="cert-issuer-badge" style="color:var(--gold);">Highlight</div>
+      <div class="cert-name" style="font-style:italic;">10+ Active Certifications</div>
+      <div class="cert-date">2023 – 2026</div>
+      <div class="cert-skills-text">Continuously expanding expertise in cybersecurity, IT infrastructure, and ethical hacking.</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="page">
+  <div class="section-rule">
+    <span class="section-num">IV.</span>
+    <h2 class="section-title">Academic <em>Background</em></h2>
+    <div class="section-rule-line"></div>
+  </div>
+
+  <div class="edu-layout">
+    <div class="edu-left">
+      <div class="edu-ornament">BSc.</div>
+      <div class="edu-degree-title">Bachelor of Science in Electronic Engineering</div>
+      <div class="edu-school-name">Sudan University of Science and Technology</div>
+      <p class="edu-dept">Faculty of Engineering — Electronic Engineering<br>Communications Department<br>Khartoum, Sudan</p>
+    </div>
+    <div class="edu-divider"></div>
+    <div class="edu-right">
+      <p class="edu-quote">
+        "A foundation in <strong>Electronic Engineering</strong> underpins every decision I make in IT infrastructure and security — understanding systems from the ground up."
+      </p>
+      <p class="edu-dept" style="font-style:normal;">The degree provided a rigorous technical foundation in signals, communications, and electronics — expertise that translates directly into deep system-level intuition in cybersecurity and network engineering.</p>
+    </div>
+  </div>
+
+  <div style="height:2rem;"></div>
+
+  <div class="edu-layout" style="border-top:1px solid var(--rule); padding-top:2.5rem;">
+    <div class="edu-left">
+      <div class="edu-ornament" style="font-size:5.5rem;">Dip.</div>
+      <div class="edu-degree-title">Diploma in Electronic Engineering</div>
+      <div class="edu-school-name">Telecommunication Department</div>
+      <p class="edu-dept">Specialisation in telecommunications systems,<br>signal transmission, and network infrastructure.<br>Khartoum, Sudan</p>
+    </div>
+    <div class="edu-divider"></div>
+    <div class="edu-right">
+      <p class="edu-quote">
+        "Telecommunications engineering gave me a deep understanding of <strong>how networks communicate</strong> — the backbone of every security and infrastructure decision."
+      </p>
+      <p class="edu-dept" style="font-style:normal;">The diploma specialisation in telecommunications directly shaped my expertise in network administration, infrastructure monitoring, and the technical configuration of telecom equipment throughout my career.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+  <div class="section-rule">
+    <span class="section-num">V.</span>
+    <h2 class="section-title">Get In <em>Touch</em></h2>
+    <div class="section-rule-line"></div>
+  </div>
+
+  <div class="contact-headline">
+    Let's work<br><span>together</span>
+  </div>
+  <p class="contact-sub">Open to roles in IT management, cybersecurity, and systems administration. Based in Baghdad, available for remote and on-site opportunities.</p>
+  <div class="contact-row">
+    <a href="https://www.linkedin.com/in/mohammed-abdallah28" target="_blank" class="contact-btn contact-btn-fill">LinkedIn Profile</a>
+    <a href="mailto:mabdall.alt@gmail.com" class="contact-btn contact-btn-outline">Send Email</a>
+    <a href="https://github.com/moax342" target="_blank" class="contact-btn contact-btn-outline">GitHub</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>Mohammed Altoum · Baghdad, Iraq</span>
+  <span class="footer-ornament">◆</span>
+  <span>IT Manager · Ethical Hacker · 2026</span>
+</footer>
+
+</body>
+</html>
