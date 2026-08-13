@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<script>document.documentElement.classList.add('js');</script>
+<script>
+/* Runs before first paint so the chosen theme never flashes the wrong colours. */
+(function(){
+  var r=document.documentElement;
+  r.classList.add('js');
+  var saved=null;
+  try{ saved=localStorage.getItem('theme'); }catch(e){}
+  r.setAttribute('data-theme',
+    (saved==='light'||saved==='dark') ? saved
+      : (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
+})();
+</script>
 <title>Mohammed Altoum — IT Manager, Odoo &amp; Microsoft 365 Administrator</title>
 <meta name="description" content="Mohammed Altoum — IT Manager in Baghdad, Iraq. Odoo ERP and Microsoft 365 administration, infrastructure, virtualisation and cybersecurity. CEH certified."/>
 <meta name="author" content="Mohammed Altoum"/>
@@ -18,15 +29,53 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
 <style>
 /* ═══════════════ DESIGN TOKENS — Slate + Cyan ═══════════════ */
+/* Dark is the base theme. Light is applied either by the OS preference
+   (unless the visitor has explicitly chosen dark) or by the theme toggle. */
 :root {
   --bg:#0B0F14; --bg-2:#0E141C; --surface:#131A24; --surface-2:#18212D;
   --line:#1E2A38; --line-soft:#16202B;
   --text:#E6EDF5; --text-2:#A8B8C8; --muted:#7D8FA3;
   --accent:#22D3EE; --accent-deep:#0E7490; --accent-soft:rgba(34,211,238,.09);
-  --green:#4ADE80; --amber:#FBBF24;
+  --accent-hover:#67E8F9; --on-accent:#04222A;
+  --green:#4ADE80; --green-bd:rgba(74,222,128,.3); --green-bg:rgba(74,222,128,.08);
+  --amber:#FBBF24;
+  --nav-bg:rgba(11,15,20,.82);
+  --tile-shadow:0 6px 18px rgba(34,211,238,.14);
+  --photo-gray:28%;
   --sans:'Space Grotesk',system-ui,-apple-system,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
   --maxw:1180px; --nav-h:60px; --r:10px;
+  color-scheme:dark;
+}
+/* Light palette — recalibrated rather than inverted: the accent darkens to
+   cyan-700 so it still passes contrast on white. */
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --bg:#F6F8FB; --bg-2:#EDF1F6; --surface:#FFFFFF; --surface-2:#F4F7FA;
+    --line:#DBE3EC; --line-soft:#E9EEF4;
+    --text:#0A121B; --text-2:#3E4C5C; --muted:#63748A;
+    --accent:#0E7490; --accent-deep:#0B5A70; --accent-soft:rgba(14,116,144,.09);
+    --accent-hover:#0B5A70; --on-accent:#FFFFFF;
+    --green:#15803D; --green-bd:rgba(21,128,61,.35); --green-bg:rgba(21,128,61,.08);
+    --amber:#B45309;
+    --nav-bg:rgba(246,248,251,.85);
+    --tile-shadow:0 6px 16px rgba(10,18,27,.12);
+    --photo-gray:12%;
+    color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#F6F8FB; --bg-2:#EDF1F6; --surface:#FFFFFF; --surface-2:#F4F7FA;
+  --line:#DBE3EC; --line-soft:#E9EEF4;
+  --text:#0A121B; --text-2:#3E4C5C; --muted:#63748A;
+  --accent:#0E7490; --accent-deep:#0B5A70; --accent-soft:rgba(14,116,144,.09);
+  --accent-hover:#0B5A70; --on-accent:#FFFFFF;
+  --green:#15803D; --green-bd:rgba(21,128,61,.35); --green-bg:rgba(21,128,61,.08);
+  --amber:#B45309;
+  --nav-bg:rgba(246,248,251,.85);
+  --tile-shadow:0 6px 16px rgba(10,18,27,.12);
+  --photo-gray:12%;
+  color-scheme:light;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 24px);-webkit-text-size-adjust:100%}
@@ -61,12 +110,12 @@ html[lang="ar"] .card-kicker,html[lang="ar"] .meta-line,html[lang="ar"] .stack-n
 html[lang="ar"] .stat-num{direction:ltr;text-align:end}
 
 /* ═══════════════ NAV ═══════════════ */
-.nav{position:sticky;top:0;z-index:100;height:var(--nav-h);background:rgba(11,15,20,.82);
+.nav{position:sticky;top:0;z-index:100;height:var(--nav-h);background:var(--nav-bg);
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-inner{max-width:var(--maxw);margin:0 auto;height:100%;padding-inline:32px;display:flex;align-items:center;gap:28px}
 .brand{font-family:var(--mono);font-size:.9rem;font-weight:700;color:var(--text);text-decoration:none;
   display:flex;align-items:center;gap:9px;white-space:nowrap}
-.brand-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(74,222,128,.16);flex:none}
+.brand-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px var(--green-bg);flex:none}
 .nav-links{display:flex;gap:4px;margin-inline-start:auto;overflow-x:auto;scrollbar-width:none}
 .nav-links::-webkit-scrollbar{display:none}
 .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;text-decoration:none;color:var(--muted);
@@ -77,6 +126,17 @@ html[lang="ar"] .stat-num{direction:ltr;text-align:end}
   border:1px solid var(--line);border-radius:6px;padding:7px 13px;cursor:pointer;flex:none;
   transition:background .18s,border-color .18s}
 .lang-btn:hover{background:var(--accent-soft);border-color:var(--accent-deep)}
+.theme-btn{background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:6px;
+  padding:6px 9px;cursor:pointer;flex:none;display:grid;place-items:center;
+  transition:background .18s,border-color .18s,color .18s}
+.theme-btn:hover{background:var(--accent-soft);border-color:var(--accent-deep);color:var(--accent)}
+.theme-btn .icon{width:17px;height:17px}
+/* The button shows the theme it will switch TO. JS always resolves
+   data-theme to an explicit value, so these two rules cover every case. */
+.theme-btn .i-sun{display:none}
+.theme-btn .i-moon{display:block}
+:root[data-theme="light"] .theme-btn .i-sun{display:block}
+:root[data-theme="light"] .theme-btn .i-moon{display:none}
 
 /* ═══════════════ SHARED ═══════════════ */
 .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
@@ -114,8 +174,8 @@ section.alt{background:var(--bg-2);border-block:1px solid var(--line-soft)}
   padding:11px 20px;border:1px solid var(--line);display:inline-flex;align-items:center;gap:8px;cursor:pointer;
   transition:background .18s,border-color .18s,color .18s,transform .18s}
 .btn:hover{transform:translateY(-1px)}
-.btn-primary{background:var(--accent);color:#04222A;border-color:var(--accent);font-weight:700}
-.btn-primary:hover{background:#67E8F9;border-color:#67E8F9}
+.btn-primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:700}
+.btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
 .btn-ghost{color:var(--text-2);background:var(--surface)}
 .btn-ghost:hover{color:var(--text);border-color:var(--accent-deep)}
 .hero-side{display:flex;flex-direction:column;gap:18px}
@@ -124,7 +184,7 @@ section.alt{background:var(--bg-2);border-block:1px solid var(--line-soft)}
 .photo-frame::before{top:0;inset-inline-start:0;border-inline-end:0;border-bottom:0}
 .photo-frame::after{bottom:0;inset-inline-end:0;border-inline-start:0;border-top:0}
 .hero-photo{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 18%;display:block;border-radius:var(--r);
-  border:1px solid var(--line);filter:grayscale(28%) contrast(1.04);transition:filter .35s}
+  border:1px solid var(--line);filter:grayscale(var(--photo-gray)) contrast(1.04);transition:filter .35s}
 .hero-photo:hover{filter:grayscale(0) contrast(1)}
 .status-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
   padding:15px 17px;font-family:var(--mono);font-size:.75rem}
@@ -154,7 +214,7 @@ html[dir="rtl"] .tl-item::before{right:-30px}
 .tl-period{font-family:var(--mono);font-size:.74rem;color:var(--muted);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .tag{font-family:var(--mono);font-size:.63rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
   border-radius:4px;padding:2px 7px}
-.tag-now{color:var(--green);border:1px solid rgba(74,222,128,.3);background:rgba(74,222,128,.08)}
+.tag-now{color:var(--green);border:1px solid var(--green-bd);background:var(--green-bg)}
 .tag-int{color:var(--muted);border:1px solid var(--line);background:var(--surface)}
 .tl-role{font-size:1.22rem;font-weight:600;letter-spacing:-.015em;margin:7px 0 3px}
 .tl-company{font-family:var(--mono);font-size:.79rem;color:var(--accent);margin-bottom:13px}
@@ -191,8 +251,8 @@ html[dir="rtl"] .tl-item::before{right:-30px}
 .app{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;
   display:flex;flex-direction:column;gap:13px;transition:border-color .2s,background .2s,transform .2s}
 .app:hover{border-color:var(--accent-deep);background:var(--surface-2);transform:translateY(-2px)}
-.app-icon{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;color:#04222A;
-  background:linear-gradient(145deg,var(--accent),#0891B2);box-shadow:0 6px 18px rgba(34,211,238,.14)}
+.app-icon{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;color:#08222B;
+  background:linear-gradient(145deg,var(--accent),#0891B2);box-shadow:var(--tile-shadow)}
 .app-icon .icon{width:28px;height:28px;stroke-width:1.8}
 .app-name{font-size:1.04rem;font-weight:600;letter-spacing:-.01em}
 .app-desc{font-size:.88rem;color:var(--text-2);line-height:1.62;flex:1}
@@ -293,7 +353,7 @@ html.js .fall.in{opacity:1;transform:none;
 /* ═══════════════ PRINT ═══════════════ */
 @media print{
   @page{margin:14mm}
-  :root{--bg:#fff;--bg-2:#fff;--surface:#fff;--surface-2:#fff;--text:#000;--text-2:#1c1c1c;
+  :root,:root[data-theme]{--bg:#fff;--bg-2:#fff;--surface:#fff;--surface-2:#fff;--text:#000;--text-2:#1c1c1c;
     --muted:#4a4a4a;--line:#c8c8c8;--line-soft:#e0e0e0;--accent:#0E6E80;--accent-deep:#0E6E80;--accent-soft:transparent}
   body{background:#fff;color:#000;font-size:10.5pt}
   body::before,.nav,.lang-btn,.skip-link,.btn-row,#blocks,.photo-frame::before,.photo-frame::after{display:none!important}
@@ -331,6 +391,8 @@ html.js .fall.in{opacity:1;transform:none;
   <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 5.5a4 4 0 0 0 5 5L15 15l-6 6-3-3 6-6z"/></symbol>
   <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></symbol>
   <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.5 8.5 0 1 0 10.2 10.2z"/></symbol>
   <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H14a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h1.5"/></symbol>
 </defs></svg>
 
@@ -348,6 +410,10 @@ html.js .fall.in{opacity:1;transform:none;
       <a href="#education"      data-en="Education"  data-ar="التعليم">Education</a>
       <a href="#contact"        data-en="Contact"    data-ar="التواصل">Contact</a>
     </div>
+    <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Switch between light and dark theme" title="Switch theme">
+      <svg class="icon i-sun"  aria-hidden="true"><use href="#i-sun"/></svg>
+      <svg class="icon i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+    </button>
     <button class="lang-btn" id="langBtn" onclick="toggleLang()" aria-label="Switch language">ع</button>
   </div>
 </nav>
@@ -836,6 +902,31 @@ html.js .fall.in{opacity:1;transform:none;
     });
   };
 
+  /* ── Theme toggle (light ⇄ dark) ── */
+  var themeChange = [];                      // listeners that need to repaint
+  function currentTheme() { return document.documentElement.getAttribute('data-theme') || 'dark'; }
+
+  function applyTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', t === 'light' ? '#F6F8FB' : '#0B0F14');
+    themeChange.forEach(function (fn) { fn(t); });
+  }
+
+  window.toggleTheme = function () {
+    var next = currentTheme() === 'light' ? 'dark' : 'light';
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    applyTheme(next);
+  };
+
+  /* Follow the OS while the visitor hasn't made an explicit choice */
+  var mq = matchMedia('(prefers-color-scheme: light)');
+  (mq.addEventListener ? mq.addEventListener.bind(mq, 'change') : mq.addListener.bind(mq))(function (e) {
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (err) {}
+    if (saved !== 'light' && saved !== 'dark') applyTheme(e.matches ? 'light' : 'dark');
+  });
+
   /* ── Reveal / falling-card entrances ── */
   var animated = document.querySelectorAll('.rv, .fall');
   function revealAll() { animated.forEach(function (el) { el.classList.add('in'); }); }
@@ -884,7 +975,17 @@ html.js .fall.in{opacity:1;transform:none;
 
     var blocks = [], W = 0, H = 0, dpr = 1, raf = null, visible = true;
     var COUNT = 34;
-    var COLORS = ['rgba(34,211,238,', 'rgba(125,143,163,', 'rgba(14,116,144,'];
+    /* Light needs darker, denser strokes — the dark palette washes out on white. */
+    var PALETTE = {
+      dark:  { colors: ['rgba(34,211,238,', 'rgba(125,143,163,', 'rgba(14,116,144,'], gain: 1 },
+      light: { colors: ['rgba(14,116,144,', 'rgba(71,90,110,', 'rgba(11,90,112,'],   gain: 1.7 }
+    };
+    var COLORS = PALETTE.dark.colors, GAIN = 1;
+    function usePalette(t) {
+      var p = PALETTE[t] || PALETTE.dark;
+      COLORS = p.colors; GAIN = p.gain;
+      for (var i = 0; i < blocks.length; i++) blocks[i].c = COLORS[(Math.random() * COLORS.length) | 0];
+    }
 
     function size() {
       dpr = Math.min(devicePixelRatio || 1, 2);
@@ -926,16 +1027,18 @@ html.js .fall.in{opacity:1;transform:none;
         ctx.save();
         ctx.translate(b.x, b.y);
         ctx.rotate(b.rot);
-        ctx.strokeStyle = b.c + b.a + ')';
+        ctx.strokeStyle = b.c + (b.a * GAIN) + ')';
         ctx.lineWidth = 1;
         ctx.strokeRect(-b.s / 2, -b.s / 2, b.s, b.s);
-        ctx.fillStyle = b.c + (b.a * 0.28) + ')';
+        ctx.fillStyle = b.c + (b.a * GAIN * 0.28) + ')';
         ctx.fillRect(-b.s / 2, -b.s / 2, b.s, b.s);
         ctx.restore();
       }
     }
 
     size(); build();
+    usePalette(currentTheme());
+    themeChange.push(usePalette);
     raf = requestAnimationFrame(frame);
 
     var rt;
