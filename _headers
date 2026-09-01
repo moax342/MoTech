@@ -1,27 +1,38 @@
-# HTTP response headers for the CV site.
+# HTTP response headers for the portfolio.
 #
-# Read automatically by Netlify, Cloudflare Pages and Vercel.
+# Read automatically by Cloudflare Pages, Netlify and Vercel. The site is
+# served from a Cloudflare Worker, which applies these too.
 #
-# GitHub Pages does NOT support custom headers and will ignore this file.
-# The page carries a Content-Security-Policy in a <meta> tag so the policy
-# still applies there, but the headers below cannot be expressed in meta and
-# are simply absent on GitHub Pages:
+# GitHub Pages does NOT support custom headers and ignores this file. The page
+# carries the same Content-Security-Policy in a <meta> tag so the policy still
+# applies there, but these cannot be expressed in meta and are simply absent:
 #   - Strict-Transport-Security
 #   - X-Content-Type-Options
 #   - X-Frame-Options / CSP frame-ancestors  (clickjacking)
 #   - Permissions-Policy
-# If a security scan needs those to pass, the site has to be served from a
-# host that allows custom headers.
+# A security scan that needs those to pass must be run against a host that
+# allows custom headers.
+#
+# The sha256 below covers the inline JSON-LD block in index.html. Editing that
+# block changes its hash: recompute and update both this file and the meta tag.
 
 /*
-  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; media-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-itxgg+Xc7bTPU6fSJe99yJhv5NIdpY4opZH90RFQS30='; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; media-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
-  Permissions-Policy: accelerometer=(), autoplay=(), camera=(), display-capture=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), usb=(), interest-cohort=()
+  X-Permitted-Cross-Domain-Policies: none
+  Origin-Agent-Cluster: ?1
+  Permissions-Policy: accelerometer=(), autoplay=(), camera=(), display-capture=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), usb=(), browsing-topics=(), interest-cohort=()
 
 /assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/*
   Cache-Control: public, max-age=31536000, immutable
