@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Mohammed Altoum — CV</title>
+<!-- Print template for Mohammed-Altoum-CV.pdf. It holds no content of its
+     own: tools/build-assets.js reads everything from index.html and hands it
+     to render() below, so the site and the PDF can never disagree. -->
+<style>
+@font-face{font-family:'Manrope';font-weight:400 800;src:url('../assets/fonts/manrope-latin.woff2') format('woff2')}
+@page{size:A4;margin:14mm 15mm 14mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Manrope',system-ui,sans-serif;font-size:9.4pt;line-height:1.45;color:#16181A}
+a{color:inherit;text-decoration:none}
+.accent{color:#B23C0B}
+header{display:flex;gap:16px;align-items:center;padding-bottom:12px;border-bottom:1.5px solid #16181A;margin-bottom:12px}
+header img{width:70px;height:70px;border-radius:8px;object-fit:cover;object-position:top;background:#EEE}
+h1{font-size:22pt;line-height:1.05;letter-spacing:-.02em;font-weight:800}
+.role{font-size:10.5pt;font-weight:600;margin-top:3px}
+.contact{margin-top:5px;color:#444;font-size:8.6pt}
+.contact span{white-space:nowrap}
+.contact span + span::before{content:'·';margin:0 6px;color:#999}
+h2{font-size:8.4pt;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#B23C0B;margin:13px 0 6px}
+.summary p + p{margin-top:5px}
+.job{break-inside:avoid;margin-bottom:8px}
+.job-head{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.job h3{font-size:10pt;font-weight:700}
+.when{font-size:8.4pt;color:#555;white-space:nowrap;font-variant-numeric:tabular-nums}
+.org{color:#444;font-size:8.8pt}
+ul{padding-inline-start:13px;margin-top:3px}
+li{margin-bottom:1.5px}
+li::marker{color:#999}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}
+.skill b{font-weight:700}
+.proj{break-inside:avoid;margin-bottom:6px}
+.proj h3{font-size:9.4pt;font-weight:700;display:inline}
+.proj .cat{color:#666;font-size:8.4pt;margin-inline-start:6px}
+.cert{display:flex;justify-content:space-between;gap:8px;break-inside:avoid;padding:2px 0;border-bottom:.5px solid #E2E4E7}
+.cert .who{color:#666}
+.edu{break-inside:avoid;margin-bottom:5px}
+.edu h3{font-size:9.6pt;font-weight:700}
+</style>
+</head>
+<body>
+<header>
+  <img id="photo" alt=""/>
+  <div>
+    <h1 id="name"></h1>
+    <div class="role" id="role"></div>
+    <div class="contact" id="contact"></div>
+  </div>
+</header>
+<section><h2>Profile</h2><div class="summary" id="summary"></div></section>
+<section><h2>Experience</h2><div id="jobs"></div></section>
+<section><h2>Skills</h2><div class="cols" id="skills"></div></section>
+<section><h2>Selected projects</h2><div id="projects"></div></section>
+<section><h2>Education</h2><div id="edu"></div></section>
+<section><h2>Certifications</h2><div class="cols" id="certs"></div></section>
+<script>
+/* Builds with DOM nodes and textContent only, never innerHTML. */
+function el(tag, cls, text) {
+  var e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
+}
+function render(d) {
+  document.getElementById('photo').src = d.photo;
+  document.getElementById('name').textContent = d.name;
+  document.getElementById('role').textContent = d.role;
+  var c = document.getElementById('contact');
+  d.contact.forEach(function (t) { c.appendChild(el('span', null, t)); });
+  var s = document.getElementById('summary');
+  d.summary.forEach(function (t) { s.appendChild(el('p', null, t)); });
+
+  var jobs = document.getElementById('jobs');
+  d.jobs.forEach(function (j) {
+    var box = el('div', 'job'), head = el('div', 'job-head');
+    head.appendChild(el('h3', null, j.title));
+    head.appendChild(el('span', 'when', j.when));
+    box.appendChild(head);
+    box.appendChild(el('div', 'org', j.org));
+    var ul = el('ul');
+    j.bullets.forEach(function (b) { ul.appendChild(el('li', null, b)); });
+    box.appendChild(ul);
+    jobs.appendChild(box);
+  });
+
+  var sk = document.getElementById('skills');
+  d.skills.forEach(function (g) {
+    var p = el('div', 'skill');
+    p.appendChild(el('b', null, g.group + ': '));
+    p.appendChild(document.createTextNode(g.items.join(', ')));
+    sk.appendChild(p);
+  });
+
+  var pr = document.getElementById('projects');
+  d.projects.forEach(function (x) {
+    var box = el('div', 'proj');
+    box.appendChild(el('h3', null, x.title));
+    box.appendChild(el('span', 'cat', x.cat));
+    box.appendChild(el('div', null, x.text));
+    pr.appendChild(box);
+  });
+
+  var ed = document.getElementById('edu');
+  d.edu.forEach(function (x) {
+    var box = el('div', 'edu');
+    box.appendChild(el('h3', null, x.title));
+    box.appendChild(el('div', 'org', x.where));
+    ed.appendChild(box);
+  });
+
+  var ce = document.getElementById('certs');
+  d.certs.forEach(function (x) {
+    var row = el('div', 'cert'), l = el('span');
+    l.appendChild(document.createTextNode(x.title + ' '));
+    l.appendChild(el('span', 'who', '· ' + x.issuer));
+    row.appendChild(l);
+    row.appendChild(el('span', 'when', x.when));
+    ce.appendChild(row);
+  });
+}
+</script>
+</body>
+</html>
