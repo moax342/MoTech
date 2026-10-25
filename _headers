@@ -13,6 +13,10 @@
 # A security scan that needs those to pass must be run against a host that
 # allows custom headers.
 #
+# /css and /js are cached as immutable, so index.html references them with a
+# ?v= query string. Bump it whenever either file changes, or returning visitors
+# keep the old copy for a year.
+#
 # The sha256 below covers the inline JSON-LD block in index.html. Editing that
 # block changes its hash: recompute and update both this file and the meta tag.
 
@@ -36,3 +40,10 @@
 
 /js/*
   Cache-Control: public, max-age=31536000, immutable
+
+/Mohammed-Altoum-CV.pdf
+  Cache-Control: public, max-age=3600
+  Content-Disposition: attachment; filename="Mohammed-Altoum-CV.pdf"
+
+/tools/*
+  X-Robots-Tag: noindex

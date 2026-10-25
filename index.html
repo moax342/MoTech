@@ -28,14 +28,15 @@
   upgrade-insecure-requests"/>
 <meta name="referrer" content="strict-origin-when-cross-origin"/>
 
-<script src="js/theme-init.js"></script>
+<script src="js/theme-init.js?v=3"></script>
 
 <title data-en="Mohammed Altoum — IT Manager · Odoo ERP, Microsoft 365 &amp; Cybersecurity" data-ar="محمد التوم — مدير تقنية المعلومات · Odoo و Microsoft 365 والأمن السيبراني">Mohammed Altoum — IT Manager · Odoo ERP, Microsoft 365 &amp; Cybersecurity</title>
 <meta name="description" data-i18n-content data-en="Mohammed Altoum — IT Manager in Baghdad, Iraq. IT infrastructure, Odoo ERP rollouts, Microsoft 365 and Active Directory, virtualisation, VoIP, cybersecurity and Flutter application development. CEH certified." data-ar="محمد التوم — مدير تقنية المعلومات في بغداد، العراق. البنية التحتية لتقنية المعلومات، تطبيق Odoo ERP، و Microsoft 365 و Active Directory، والمحاكاة الافتراضية، والاتصال الصوتي، والأمن السيبراني، وتطوير تطبيقات Flutter. حاصل على شهادة CEH." content="Mohammed Altoum — IT Manager in Baghdad, Iraq. IT infrastructure, Odoo ERP rollouts, Microsoft 365 and Active Directory, virtualisation, VoIP, cybersecurity and Flutter application development. CEH certified."/>
 <meta name="author" content="Mohammed Altoum"/>
-<meta name="theme-color" content="#05070F"/>
+<meta name="theme-color" content="#101214"/>
 <link rel="canonical" href="https://cv-res.moaxmohammed36.workers.dev/"/>
-<link rel="icon" href="assets/favicon.ico" sizes="16x16 32x32 48x48"/>
+<link rel="icon" href="assets/favicon.ico?v=3" sizes="16x16 32x32 48x48"/>
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
 
 <meta property="og:type" content="profile"/>
 <meta property="og:site_name" content="Mohammed Altoum"/>
@@ -43,23 +44,22 @@
 <meta property="og:locale" content="en_US"/>
 <meta property="og:locale:alternate" content="ar_IQ"/>
 <meta property="og:title" content="Mohammed Altoum — IT Manager · Odoo ERP, Microsoft 365 &amp; Cybersecurity"/>
-<meta property="og:description" content="IT Manager in Baghdad. Infrastructure, Odoo ERP, Microsoft 365, virtualisation, VoIP and cybersecurity — plus six production Flutter apps. CEH certified."/>
+<meta property="og:description" content="IT Manager in Baghdad. Infrastructure, Odoo ERP, Microsoft 365, virtualisation, VoIP and cybersecurity, plus six production Flutter apps. CEH certified."/>
 <meta property="og:image" content="https://cv-res.moaxmohammed36.workers.dev/assets/images/portrait.webp"/>
 <meta property="og:image:width" content="399"/>
 <meta property="og:image:height" content="399"/>
 <meta property="og:image:alt" content="Portrait of Mohammed Altoum"/>
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Mohammed Altoum — IT Manager · Odoo ERP, Microsoft 365 &amp; Cybersecurity"/>
-<meta name="twitter:description" content="IT Manager in Baghdad. Infrastructure, Odoo ERP, Microsoft 365, virtualisation, VoIP and cybersecurity — plus six production Flutter apps."/>
+<meta name="twitter:description" content="IT Manager in Baghdad. Infrastructure, Odoo ERP, Microsoft 365, virtualisation, VoIP and cybersecurity, plus six production Flutter apps."/>
 <meta name="twitter:image" content="https://cv-res.moaxmohammed36.workers.dev/assets/images/portrait.webp"/>
 
 <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/style.css?v=3"/>
 </head>
 <body>
 
 <a class="skip-link" href="#main" data-en="Skip to content" data-ar="تخطّي إلى المحتوى">Skip to content</a>
-<div class="progress" id="progress" aria-hidden="true"></div>
 
 <!-- ══ ICON SPRITE ══ -->
 <svg class="sprite" aria-hidden="true" focusable="false"><defs>
@@ -117,20 +117,20 @@
               data-en-aria="Switch between light and dark theme" data-ar-aria="التبديل بين الوضع الفاتح والداكن"
               aria-label="Switch between light and dark theme">
         <svg class="ico-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="ico-moon" aria-hidden="true"><use href="#i-moon"/></svg>
       </button>
       <button class="icon-btn lang-btn" type="button"
               data-en-aria="Switch the site to Arabic" data-ar-aria="تحويل الموقع إلى الإنجليزية"
               aria-label="Switch the site to Arabic">ع</button>
-      <button class="btn btn-primary nav-cv print-btn" type="button"
-              data-en-aria="Download CV — opens the print dialog, save as PDF"
-              data-ar-aria="تحميل السيرة الذاتية — يفتح نافذة الطباعة، احفظها كملف PDF"
-              aria-label="Download CV — opens the print dialog, save as PDF">
+      <a class="btn btn-primary nav-cv" href="Mohammed-Altoum-CV.pdf" download="Mohammed-Altoum-CV.pdf"
+         data-en-aria="Download CV (PDF)" data-ar-aria="تحميل السيرة الذاتية (PDF)" aria-label="Download CV (PDF)">
         <svg aria-hidden="true"><use href="#i-download"/></svg>
         <span data-en="Download CV" data-ar="تحميل السيرة">Download CV</span>
-      </button>
+      </a>
       <button class="icon-btn burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer"
-              data-en-aria="Open the menu" data-ar-aria="فتح القائمة" aria-label="Open the menu">
-        <svg aria-hidden="true"><use href="#i-menu"/></svg>
+              data-en-aria="Menu" data-ar-aria="القائمة" aria-label="Menu">
+        <svg class="ico-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="ico-close" aria-hidden="true"><use href="#i-close"/></svg>
       </button>
     </div>
   </div>
@@ -144,10 +144,10 @@
   <a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a>
   <a href="#credentials" data-en="Credentials" data-ar="الاعتمادات">Credentials</a>
   <a href="#contact" data-en="Contact" data-ar="التواصل">Contact</a>
-  <button class="btn btn-primary print-btn" type="button">
+  <a class="btn btn-primary" href="Mohammed-Altoum-CV.pdf" download="Mohammed-Altoum-CV.pdf">
     <svg aria-hidden="true"><use href="#i-download"/></svg>
-    <span data-en="Download CV" data-ar="تحميل السيرة">Download CV</span>
-  </button>
+    <span data-en="Download CV (PDF)" data-ar="تحميل السيرة (PDF)">Download CV (PDF)</span>
+  </a>
 </div>
 
 <main id="main">
@@ -158,57 +158,39 @@
     <div class="hero-grid">
 
       <div class="hero-copy">
-        <div class="hero-status rv in">
+        <p class="hero-status">
           <span class="dot" aria-hidden="true"></span>
-          <span data-en="Open to opportunities" data-ar="متاح لفرص عمل">Open to opportunities</span>
-        </div>
+          <span data-en="Open to new roles · Baghdad or remote" data-ar="متاح لفرص جديدة · بغداد أو عن بُعد">Open to new roles · Baghdad or remote</span>
+        </p>
 
-        <span class="eyebrow rv in rv-d1" data-en="IT • ERP • Cloud • Security • Development" data-ar="تقنية المعلومات • ERP • السحابة • الأمن • التطوير">IT • ERP • Cloud • Security • Development</span>
+        <h1 data-en="Mohammed Altoum" data-ar="محمد التوم">Mohammed Altoum</h1>
+        <p class="hero-role" data-en="IT Manager at Hilal Al-Sharq. Infrastructure, Odoo ERP, Microsoft 365 and security." data-ar="مدير تقنية المعلومات في شركة هلال الشرق. البنية التحتية و Odoo ERP و Microsoft 365 والأمن.">IT Manager at Hilal Al-Sharq. Infrastructure, Odoo ERP, Microsoft 365 and security.</p>
 
-        <div class="hero-name rv in rv-d1" data-en="Mohammed Altoum" data-ar="محمد التوم">Mohammed Altoum</div>
+        <p class="lede" data-en="I run IT for a multi-branch company in Baghdad: the servers and network, Microsoft 365, and the Odoo rollout across our branches. When the ERP can't reach the people in the field, <strong>I write the Flutter app that does.</strong>" data-ar="أدير تقنية المعلومات لشركة متعددة الفروع في بغداد: الخوادم والشبكة و Microsoft 365 وتطبيق Odoo في فروعنا. وحين لا يصل نظام ERP إلى فرق الميدان، <strong>أكتب تطبيق Flutter الذي يصل.</strong>">I run IT for a multi-branch company in Baghdad: the servers and network, Microsoft 365, and the Odoo rollout across our branches. When the ERP can't reach the people in the field, <strong>I write the Flutter app that does.</strong></p>
 
-        <h1 class="rv in rv-d2">
-          <span class="line" data-en="I build technology" data-ar="أبني تقنية">I build technology</span>
-          <span class="line grad-text" data-en="that works." data-ar="تعمل فعلاً.">that works.</span>
-        </h1>
-
-        <p class="lede rv in rv-d3" data-en="I run the IT function at Hilal Al-Sharq in Baghdad — infrastructure, servers, networks, Microsoft 365 and the Odoo ERP rollout across the branch network — and I <strong>build the mobile apps that fill the gaps our systems leave behind.</strong>" data-ar="أدير وظيفة تقنية المعلومات في شركة هلال الشرق ببغداد — البنية التحتية والخوادم والشبكات و Microsoft 365 وتطبيق نظام Odoo عبر شبكة الفروع — و<strong>أبني تطبيقات الجوال التي تسدّ الفجوات التي تتركها أنظمتنا.</strong>">I run the IT function at Hilal Al-Sharq in Baghdad — infrastructure, servers, networks, Microsoft 365 and the Odoo ERP rollout across the branch network — and I <strong>build the mobile apps that fill the gaps our systems leave behind.</strong></p>
-
-        <div class="hero-actions rv in rv-d3">
-          <a class="btn btn-primary" href="#projects">
-            <span data-en="View my work" data-ar="شاهد أعمالي">View my work</span>
-            <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">
+            <svg aria-hidden="true"><use href="#i-mail"/></svg>
+            <span data-en="Get in touch" data-ar="تواصل معي">Get in touch</span>
           </a>
-          <button class="btn btn-ghost print-btn" type="button"
-                  data-en-aria="Download CV — opens the print dialog, save as PDF"
-                  data-ar-aria="تحميل السيرة الذاتية — يفتح نافذة الطباعة، احفظها كملف PDF"
-                  aria-label="Download CV — opens the print dialog, save as PDF">
+          <a class="btn btn-ghost" href="Mohammed-Altoum-CV.pdf" download="Mohammed-Altoum-CV.pdf"
+             data-en-aria="Download CV (PDF)" data-ar-aria="تحميل السيرة الذاتية (PDF)" aria-label="Download CV (PDF)">
             <svg aria-hidden="true"><use href="#i-download"/></svg>
             <span data-en="Download CV" data-ar="تحميل السيرة">Download CV</span>
-          </button>
-          <a class="btn btn-ghost" href="#contact">
-            <svg aria-hidden="true"><use href="#i-mail"/></svg>
-            <span data-en="Contact me" data-ar="تواصل معي">Contact me</span>
+            <span class="btn-hint">PDF</span>
           </a>
         </div>
 
-        <div class="hero-meta rv in rv-d3">
+        <div class="hero-meta">
           <span><svg aria-hidden="true"><use href="#i-pin"/></svg><span data-en="Baghdad, Iraq" data-ar="بغداد، العراق">Baghdad, Iraq</span></span>
-          <span><svg aria-hidden="true"><use href="#i-briefcase"/></svg><span data-en="Hilal Al-Sharq Co." data-ar="شركة هلال الشرق">Hilal Al-Sharq Co.</span></span>
           <span><svg aria-hidden="true"><use href="#i-globe"/></svg><span data-en="English · Arabic" data-ar="الإنجليزية · العربية">English · Arabic</span></span>
           <a href="https://www.linkedin.com/in/mohammed-abdallah28" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true"><use href="#i-link"/></svg>LinkedIn</a>
           <a href="https://github.com/moax342" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
         </div>
       </div>
 
-      <!-- Identity card: the portrait framed as a system panel, with the four
-           facts a recruiter checks first sitting underneath it. -->
-      <aside class="idcard rv in rv-d2" aria-label="Profile summary">
-        <div class="idcard-top">
-          <span class="idcard-lights" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="keep-mono">ALTOUM · BGW</span>
-        </div>
-
+      <!-- The portrait, with the four facts a recruiter checks first under it. -->
+      <aside class="idcard" data-en-aria="Profile summary" data-ar-aria="ملخص الملف" aria-label="Profile summary">
         <div class="portrait-frame">
           <img class="portrait" src="assets/images/portrait.webp" width="399" height="399"
                fetchpriority="high" decoding="async"
@@ -217,10 +199,10 @@
         </div>
 
         <dl class="idcard-rows">
-          <div><dt data-en="Status" data-ar="الحالة">Status</dt><dd data-en="Available" data-ar="متاح">Available</dd></div>
+          <div><dt data-en="Experience" data-ar="الخبرة">Experience</dt><dd data-en="9+ years" data-ar="+٩ سنوات">9+ years</dd></div>
           <div><dt data-en="Current" data-ar="الحالي">Current</dt><dd data-en="IT Manager" data-ar="مدير تقنية المعلومات">IT Manager</dd></div>
-          <div><dt data-en="Focus" data-ar="التخصص">Focus</dt><dd>Odoo · M365 · Flutter</dd></div>
-          <div><dt data-en="Work mode" data-ar="نمط العمل">Work mode</dt><dd data-en="On-site / Remote" data-ar="حضوري / عن بُعد">On-site / Remote</dd></div>
+          <div><dt data-en="Certifications" data-ar="الشهادات">Certifications</dt><dd data-en="14, incl. CEH" data-ar="١٤، منها CEH">14, incl. CEH</dd></div>
+          <div><dt data-en="Builds" data-ar="يطوّر">Builds</dt><dd data-en="Flutter apps" data-ar="تطبيقات Flutter">Flutter apps</dd></div>
         </dl>
       </aside>
 
@@ -231,33 +213,33 @@
 <!-- ══ ABOUT ══ -->
 <section class="section" id="about">
   <div class="shell">
-    <div class="sec-head rv">
-      <span class="sec-index"><b>01</b> <span data-en="Profile" data-ar="نبذة">Profile</span></span>
-      <h2><span data-en="Technology across " data-ar="تقنية تمتد من ">Technology across </span><em class="grad-text" data-en="the whole stack of a business" data-ar="البنية التحتية إلى المستخدم">the whole stack of a business</em></h2>
-      <p class="sec-lede" data-en="Not a specialist in one layer — the infrastructure underneath, the ERP that runs on it, the security around it, and the applications people actually touch." data-ar="لست متخصصاً في طبقة واحدة — بل في البنية التحتية أسفلها، ونظام ERP الذي يعمل عليها، والأمن المحيط بها، والتطبيقات التي يستخدمها الناس فعلياً.">Not a specialist in one layer — the infrastructure underneath, the ERP that runs on it, the security around it, and the applications people actually touch.</p>
+    <div class="sec-head">
+      <span class="sec-index" data-en="About" data-ar="نبذة">About</span>
+      <h2 data-en="Infrastructure, ERP, security, and the apps on top" data-ar="البنية التحتية وأنظمة ERP والأمن، والتطبيقات فوقها">Infrastructure, ERP, security, and the apps on top</h2>
+      <p class="sec-lede" data-en="I work across the whole stack of a business: the infrastructure underneath, the ERP that runs on it, the security around it, and the applications people use every day." data-ar="أعمل عبر طبقات الشركة كلها: البنية التحتية في الأساس، ونظام ERP الذي يعمل عليها، والأمن المحيط بها، والتطبيقات التي يستخدمها الناس كل يوم.">I work across the whole stack of a business: the infrastructure underneath, the ERP that runs on it, the security around it, and the applications people use every day.</p>
     </div>
 
     <div class="about-grid">
       <div class="about-copy rv">
-        <p data-en="I'm an IT professional based in Baghdad who enjoys helping people feel more confident with technology — whether that's fixing a problem, explaining something in plain language, or showing a better way to work." data-ar="أنا متخصص في تقنية المعلومات مقيم في بغداد، أستمتع بمساعدة الناس ليشعروا بثقة أكبر مع التكنولوجيا — سواء بحل مشكلة، أو بشرح فكرة بلغة بسيطة، أو بعرض طريقة أفضل للعمل.">I'm an IT professional based in Baghdad who enjoys helping people feel more confident with technology — whether that's fixing a problem, explaining something in plain language, or showing a better way to work.</p>
+        <p data-en="I'm an IT professional in Baghdad, and the part of the job I enjoy most is helping people feel confident with technology: fixing the problem, explaining it in plain language, or showing them a better way to work." data-ar="أنا متخصص في تقنية المعلومات مقيم في بغداد، أستمتع بمساعدة الناس ليشعروا بثقة أكبر مع التكنولوجيا: سواء بحل مشكلة، أو بشرح فكرة بلغة بسيطة، أو بعرض طريقة أفضل للعمل.">I'm an IT professional in Baghdad, and the part of the job I enjoy most is helping people feel confident with technology: fixing the problem, explaining it in plain language, or showing them a better way to work.</p>
         <p data-en="My route here was unusual and I think it's the reason the work holds up: electronic engineering, then telecom field work, then five years of fintech and back-office operations at MTN Sudan, then enterprise IT. I learned what a business actually needs from a system before I ever had to build one." data-ar="كان طريقي إلى هنا غير تقليدي، وأظن أن هذا سبب صلابة العمل: هندسة إلكترونية، ثم عمل ميداني في الاتصالات، ثم خمس سنوات في التقنية المالية والعمليات الداخلية في MTN السودان، ثم تقنية معلومات المؤسسات. تعلّمت ما تحتاجه الشركة فعلياً من النظام قبل أن أُطالَب ببناء واحد.">My route here was unusual and I think it's the reason the work holds up: electronic engineering, then telecom field work, then five years of fintech and back-office operations at MTN Sudan, then enterprise IT. I learned what a business actually needs from a system before I ever had to build one.</p>
-        <p data-en="Today I own an entire IT function — and when the ERP can't reach the field, I write the Flutter app that does. <strong>I'd rather leave behind a documented system than an indispensable person.</strong>" data-ar="اليوم أدير وظيفة تقنية معلومات كاملة — وحين لا يصل نظام ERP إلى الميدان، أكتب تطبيق Flutter الذي يصل. <strong>أفضّل أن أترك خلفي نظاماً موثّقاً بدلاً من شخص لا غنى عنه.</strong>">Today I own an entire IT function — and when the ERP can't reach the field, I write the Flutter app that does. <strong>I'd rather leave behind a documented system than an indispensable person.</strong></p>
+        <p data-en="Today I run an entire IT function, and I write software when off-the-shelf tools fall short. <strong>I'd rather leave behind a documented system than an indispensable person.</strong>" data-ar="اليوم أدير وظيفة تقنية معلومات كاملة، وأكتب البرمجيات حين لا تكفي الأدوات الجاهزة. <strong>أفضّل أن أترك خلفي نظاماً موثّقاً بدلاً من شخص لا غنى عنه.</strong>">Today I run an entire IT function, and I write software when off-the-shelf tools fall short. <strong>I'd rather leave behind a documented system than an indispensable person.</strong></p>
 
         <div class="stats">
-          <div class="stat card">
-            <div class="stat-num grad-text"><span data-count="9">9</span>+</div>
+          <div class="stat">
+            <div class="stat-num"><span data-count="9">9</span>+</div>
             <div class="stat-label" data-en="Years in IT, telecom &amp; fintech" data-ar="سنوات في تقنية المعلومات والاتصالات والتقنية المالية">Years in IT, telecom &amp; fintech</div>
           </div>
-          <div class="stat card">
-            <div class="stat-num grad-text"><span data-count="6">6</span></div>
+          <div class="stat">
+            <div class="stat-num"><span data-count="6">6</span></div>
             <div class="stat-label" data-en="Flutter apps designed &amp; shipped" data-ar="تطبيقات Flutter صُممت وأُطلقت">Flutter apps designed &amp; shipped</div>
           </div>
-          <div class="stat card">
-            <div class="stat-num grad-text"><span data-count="70">70</span>%</div>
+          <div class="stat">
+            <div class="stat-num"><span data-count="70">70</span>%</div>
             <div class="stat-label" data-en="Less daily data entry after internal tooling" data-ar="انخفاض إدخال البيانات اليومي بعد الأدوات الداخلية">Less daily data entry after internal tooling</div>
           </div>
-          <div class="stat card">
-            <div class="stat-num grad-text"><span data-count="14">14</span></div>
+          <div class="stat">
+            <div class="stat-num"><span data-count="14">14</span></div>
             <div class="stat-label" data-en="Professional certifications" data-ar="شهادة احترافية">Professional certifications</div>
           </div>
         </div>
@@ -304,7 +286,7 @@
             <span class="domain-ico" aria-hidden="true"><svg><use href="#i-code"/></svg></span>
             <div>
               <h3 data-en="Software Development" data-ar="تطوير البرمجيات">Software Development</h3>
-              <p data-en="Six production Flutter apps — offline-first, bilingual, Odoo-connected, shipped to real users." data-ar="ستة تطبيقات Flutter إنتاجية — تعمل دون إنترنت، ثنائية اللغة، مرتبطة بـ Odoo، ووصلت لمستخدمين حقيقيين.">Six production Flutter apps — offline-first, bilingual, Odoo-connected, shipped to real users.</p>
+              <p data-en="Six Flutter apps in production. Offline-first, bilingual, connected to Odoo, used by real staff." data-ar="ستة تطبيقات Flutter إنتاجية، تعمل دون إنترنت، ثنائية اللغة، مرتبطة بـ Odoo، ووصلت لمستخدمين حقيقيين.">Six Flutter apps in production. Offline-first, bilingual, connected to Odoo, used by real staff.</p>
             </div>
           </div>
         </div>
@@ -316,10 +298,10 @@
 <!-- ══ EXPERIENCE ══ -->
 <section class="section" id="experience">
   <div class="shell">
-    <div class="sec-head rv">
-      <span class="sec-index"><b>02</b> <span data-en="Career" data-ar="المسيرة المهنية">Career</span></span>
-      <h2><span data-en="Professional " data-ar="الخبرة ">Professional </span><em class="grad-text" data-en="experience" data-ar="المهنية">experience</em></h2>
-      <p class="sec-lede" data-en="From front-line customer service in Khartoum to owning an entire IT function in Baghdad — telecom, then fintech operations, then enterprise IT and security." data-ar="من خدمة العملاء المباشرة في الخرطوم إلى إدارة وظيفة تقنية المعلومات بالكامل في بغداد — الاتصالات، ثم عمليات التقنية المالية، ثم تقنية المعلومات والأمن للمؤسسات.">From front-line customer service in Khartoum to owning an entire IT function in Baghdad — telecom, then fintech operations, then enterprise IT and security.</p>
+    <div class="sec-head">
+      <span class="sec-index" data-en="Experience" data-ar="الخبرات">Experience</span>
+      <h2 data-en="Nine years, three industries" data-ar="تسع سنوات في ثلاثة قطاعات">Nine years, three industries</h2>
+      <p class="sec-lede" data-en="Customer service in Khartoum, then telecom and fintech operations at MTN Sudan, then enterprise IT and security in Baghdad." data-ar="خدمة العملاء في الخرطوم، ثم الاتصالات وعمليات التقنية المالية في MTN السودان، ثم تقنية المعلومات والأمن للمؤسسات في بغداد.">Customer service in Khartoum, then telecom and fintech operations at MTN Sudan, then enterprise IT and security in Baghdad.</p>
     </div>
 
     <ol class="timeline">
@@ -327,13 +309,13 @@
       <li class="tl-item now rv">
         <article class="tl-card card">
           <div class="tl-top">
-            <span class="tl-period" data-en="May 2025 — Present" data-ar="مايو ٢٠٢٥ — حتى الآن">May 2025 — Present</span>
+            <span class="tl-period" data-en="May 2025 – Present" data-ar="مايو ٢٠٢٥ – حتى الآن">May 2025 – Present</span>
             <span class="badge badge-now" data-en="Current" data-ar="حالياً">Current</span>
           </div>
           <h3 data-en="IT Manager" data-ar="مدير تقنية المعلومات">IT Manager</h3>
           <div class="tl-org" data-en="Hilal Al-Sharq Co. · Baghdad, Iraq · On-site" data-ar="شركة هلال الشرق · بغداد، العراق · حضوري">Hilal Al-Sharq Co. · Baghdad, Iraq · On-site</div>
           <ul class="tl-list">
-            <li data-en="Own the full IT function — infrastructure, networks, servers, virtualisation and enterprise applications." data-ar="أدير وظيفة تقنية المعلومات بالكامل — البنية التحتية والشبكات والخوادم والمحاكاة الافتراضية وتطبيقات المؤسسات.">Own the full IT function — infrastructure, networks, servers, virtualisation and enterprise applications.</li>
+            <li data-en="Own the full IT function: infrastructure, networks, servers, virtualisation and enterprise applications." data-ar="أدير وظيفة تقنية المعلومات بالكامل: البنية التحتية والشبكات والخوادم والمحاكاة الافتراضية وتطبيقات المؤسسات.">Own the full IT function: infrastructure, networks, servers, virtualisation and enterprise applications.</li>
             <li data-en="Lead the Odoo ERP rollout across the branch network and build the mobile apps that extend it into the field." data-ar="أقود تطبيق نظام Odoo ERP عبر شبكة الفروع وأبني تطبيقات الجوال التي توسّعه إلى الميدان.">Lead the Odoo ERP rollout across the branch network and build the mobile apps that extend it into the field.</li>
             <li data-en="Administer Microsoft 365 and Active Directory, and set the endpoint security and access-control policy." data-ar="أدير Microsoft 365 و Active Directory، وأضع سياسة أمن الأجهزة الطرفية والتحكم بالوصول.">Administer Microsoft 365 and Active Directory, and set the endpoint security and access-control policy.</li>
             <li data-en="Train staff and document infrastructure so knowledge stays with the company rather than any one person." data-ar="أدرّب الموظفين وأوثّق البنية التحتية لتبقى المعرفة لدى الشركة لا لدى شخص واحد.">Train staff and document infrastructure so knowledge stays with the company rather than any one person.</li>
@@ -347,7 +329,7 @@
       <li class="tl-item rv">
         <article class="tl-card card">
           <div class="tl-top">
-            <span class="tl-period" data-en="Jan 2025 — Sep 2025" data-ar="يناير ٢٠٢٥ — سبتمبر ٢٠٢٥">Jan 2025 — Sep 2025</span>
+            <span class="tl-period" data-en="Jan 2025 – Sep 2025" data-ar="يناير ٢٠٢٥ – سبتمبر ٢٠٢٥">Jan 2025 – Sep 2025</span>
           </div>
           <h3 data-en="System Administrator" data-ar="مدير الأنظمة">System Administrator</h3>
           <div class="tl-org" data-en="Hilal Al-Sharq Co. · Iraq · On-site" data-ar="شركة هلال الشرق · العراق · حضوري">Hilal Al-Sharq Co. · Iraq · On-site</div>
@@ -365,7 +347,7 @@
       <li class="tl-item rv">
         <article class="tl-card card">
           <div class="tl-top">
-            <span class="tl-period" data-en="Sep 2024 — Jan 2025" data-ar="سبتمبر ٢٠٢٤ — يناير ٢٠٢٥">Sep 2024 — Jan 2025</span>
+            <span class="tl-period" data-en="Sep 2024 – Jan 2025" data-ar="سبتمبر ٢٠٢٤ – يناير ٢٠٢٥">Sep 2024 – Jan 2025</span>
           </div>
           <h3 data-en="IT Support Specialist" data-ar="أخصائي دعم تقنية المعلومات">IT Support Specialist</h3>
           <div class="tl-org" data-en="Hilal Al-Sharq Co. · Baghdad, Iraq" data-ar="شركة هلال الشرق · بغداد، العراق">Hilal Al-Sharq Co. · Baghdad, Iraq</div>
@@ -382,7 +364,7 @@
       <li class="tl-item rv">
         <article class="tl-card card">
           <div class="tl-top">
-            <span class="tl-period" data-en="Jul 2024 — Sep 2024" data-ar="يوليو ٢٠٢٤ — سبتمبر ٢٠٢٤">Jul 2024 — Sep 2024</span>
+            <span class="tl-period" data-en="Jul 2024 – Sep 2024" data-ar="يوليو ٢٠٢٤ – سبتمبر ٢٠٢٤">Jul 2024 – Sep 2024</span>
           </div>
           <h3 data-en="IT Support Specialist" data-ar="أخصائي دعم تقنية المعلومات">IT Support Specialist</h3>
           <div class="tl-org" data-en="Anhar-Alhayat (KDD Iraq) · Baghdad, Iraq" data-ar="أنهار الحياة (KDD العراق) · بغداد، العراق">Anhar-Alhayat (KDD Iraq) · Baghdad, Iraq</div>
@@ -401,7 +383,7 @@
       <li class="tl-item rv">
         <article class="tl-card card">
           <div class="tl-top">
-            <span class="tl-period" data-en="May 2022 — Feb 2024" data-ar="مايو ٢٠٢٢ — فبراير ٢٠٢٤">May 2022 — Feb 2024</span>
+            <span class="tl-period" data-en="May 2022 – Feb 2024" data-ar="مايو ٢٠٢٢ – فبراير ٢٠٢٤">May 2022 – Feb 2024</span>
           </div>
           <h3 data-en="Acting Back Office Supervisor" data-ar="مشرف العمليات الداخلية (بالإنابة)">Acting Back Office Supervisor</h3>
           <div class="tl-org" data-en="MTN Sudan · Khartoum, Sudan · Contract" data-ar="MTN السودان · الخرطوم، السودان · عقد">MTN Sudan · Khartoum, Sudan · Contract</div>
@@ -414,7 +396,7 @@
             <li data-en="Resolved <b>90% of complex cases on first interaction</b> and ran training that raised team expertise by <b>20%</b>." data-ar="حللت <b>٩٠٪ من الحالات المعقدة من أول تواصل</b>، وقدت تدريباً رفع خبرة الفريق <b>٢٠٪</b>.">Resolved <b>90% of complex cases on first interaction</b> and ran training that raised team expertise by <b>20%</b>.</li>
           </ul>
           <div class="tl-tags">
-            <span class="tag" data-en="Performance analytics" data-ar="تحليل الأداء">Performance analytics</span><span class="tag">SLA management</span><span class="tag" data-en="Fraud detection" data-ar="كشف الاحتيال">Fraud detection</span><span class="tag" data-en="Team leadership" data-ar="قيادة الفرق">Team leadership</span>
+            <span class="tag" data-en="Performance analytics" data-ar="تحليل الأداء">Performance analytics</span><span class="tag" data-en="SLA management" data-ar="إدارة اتفاقيات الخدمة">SLA management</span><span class="tag" data-en="Fraud detection" data-ar="كشف الاحتيال">Fraud detection</span><span class="tag" data-en="Team leadership" data-ar="قيادة الفرق">Team leadership</span>
           </div>
         </article>
       </li>
@@ -422,7 +404,7 @@
       <li class="tl-item rv">
         <article class="tl-card card">
           <div class="tl-top">
-            <span class="tl-period" data-en="Jul 2018 — May 2023" data-ar="يوليو ٢٠١٨ — مايو ٢٠٢٣">Jul 2018 — May 2023</span>
+            <span class="tl-period" data-en="Jul 2018 – May 2023" data-ar="يوليو ٢٠١٨ – مايو ٢٠٢٣">Jul 2018 – May 2023</span>
           </div>
           <h3 data-en="Back Office Coordinator" data-ar="منسق العمليات الداخلية">Back Office Coordinator</h3>
           <div class="tl-org" data-en="MTN Sudan · Khartoum, Sudan" data-ar="MTN السودان · الخرطوم، السودان">MTN Sudan · Khartoum, Sudan</div>
@@ -434,66 +416,74 @@
             <li data-en="Improved complaint escalation rates by <b>20%</b> and processed credit-reversal transactions in line with policy." data-ar="حسّنت معدلات تصعيد الشكاوى <b>٢٠٪</b> وعالجت عمليات عكس الأرصدة وفق السياسة.">Improved complaint escalation rates by <b>20%</b> and processed credit-reversal transactions in line with policy.</li>
           </ul>
           <div class="tl-tags">
-            <span class="tag">Fintech operations</span><span class="tag" data-en="Reconciliation" data-ar="المطابقة المالية">Reconciliation</span><span class="tag" data-en="Escalation management" data-ar="إدارة التصعيد">Escalation management</span>
-          </div>
-        </article>
-      </li>
-
-      <li class="tl-item rv">
-        <article class="tl-card card">
-          <div class="tl-top">
-            <span class="tl-period" data-en="Mar 2018 — Jun 2018" data-ar="مارس ٢٠١٨ — يونيو ٢٠١٨">Mar 2018 — Jun 2018</span>
-            <span class="badge badge-intern" data-en="Internship" data-ar="تدريب">Internship</span>
-          </div>
-          <h3 data-en="Technical Engineer" data-ar="مهندس فني">Technical Engineer</h3>
-          <div class="tl-org" data-en="Vision Valley · Khartoum, Sudan" data-ar="Vision Valley · الخرطوم، السودان">Vision Valley · Khartoum, Sudan</div>
-          <ul class="tl-list">
-            <li data-en="Installed and configured telecom equipment — switches, routers, modems and cabling — for major carriers." data-ar="ثبّت وهيّأت معدات الاتصالات — مبدلات وموجّهات ومودمات وكابلات — لكبرى شركات الاتصالات.">Installed and configured telecom equipment — switches, routers, modems and cabling — for major carriers.</li>
-            <li data-en="Monitored network performance, implemented optimisation measures and maintained network security." data-ar="راقبت أداء الشبكة، ونفّذت إجراءات التحسين، وحافظت على أمن الشبكة.">Monitored network performance, implemented optimisation measures and maintained network security.</li>
-          </ul>
-          <div class="tl-tags">
-            <span class="tag" data-en="Switches &amp; routers" data-ar="المبدلات والموجهات">Switches &amp; routers</span><span class="tag" data-en="Structured cabling" data-ar="الكابلات المنظمة">Structured cabling</span>
-          </div>
-        </article>
-      </li>
-
-      <li class="tl-item rv">
-        <article class="tl-card card">
-          <div class="tl-top">
-            <span class="tl-period" data-en="Oct 2017 — Mar 2018" data-ar="أكتوبر ٢٠١٧ — مارس ٢٠١٨">Oct 2017 — Mar 2018</span>
-          </div>
-          <h3 data-en="Customer Service Representative" data-ar="ممثل خدمة العملاء">Customer Service Representative</h3>
-          <div class="tl-org" data-en="MTN Sudan · Khartoum, Sudan" data-ar="MTN السودان · الخرطوم، السودان">MTN Sudan · Khartoum, Sudan</div>
-          <ul class="tl-list">
-            <li data-en="Managed <b>500+ customer accounts</b> with <b>99% accuracy</b> and resolved <b>95% of requests within 24 hours</b>." data-ar="أدرت <b>أكثر من ٥٠٠ حساب عميل</b> بدقة <b>٩٩٪</b> وحللت <b>٩٥٪ من الطلبات خلال ٢٤ ساعة</b>.">Managed <b>500+ customer accounts</b> with <b>99% accuracy</b> and resolved <b>95% of requests within 24 hours</b>.</li>
-            <li data-en="Resolved <b>80% of basic technical questions on the first call</b>, escalating the rest appropriately." data-ar="حللت <b>٨٠٪ من الأسئلة التقنية الأساسية من أول مكالمة</b>، وصعّدت الباقي بشكل مناسب.">Resolved <b>80% of basic technical questions on the first call</b>, escalating the rest appropriately.</li>
-            <li data-en="Contributed to a <b>15% rise in sales</b> through upselling, and achieved a <b>95% customer approval rating</b>." data-ar="ساهمت في <b>ارتفاع المبيعات ١٥٪</b> عبر البيع الإضافي، وحققت <b>تقييم رضا ٩٥٪</b>.">Contributed to a <b>15% rise in sales</b> through upselling, and achieved a <b>95% customer approval rating</b>.</li>
-          </ul>
-          <div class="tl-tags">
-            <span class="tag" data-en="Account management" data-ar="إدارة الحسابات">Account management</span><span class="tag" data-en="First-line technical support" data-ar="الدعم التقني الأول">First-line technical support</span>
-          </div>
-        </article>
-      </li>
-
-      <li class="tl-item rv">
-        <article class="tl-card card">
-          <div class="tl-top">
-            <span class="tl-period" data-en="May 2017 — Jun 2017" data-ar="مايو ٢٠١٧ — يونيو ٢٠١٧">May 2017 — Jun 2017</span>
-            <span class="badge badge-intern" data-en="Internship" data-ar="تدريب">Internship</span>
-          </div>
-          <h3 data-en="Telecommunications Engineer" data-ar="مهندس اتصالات">Telecommunications Engineer</h3>
-          <div class="tl-org" data-en="Telecom &amp; Post Regulatory Authority · Sudan" data-ar="جهاز تنظيم الاتصالات والبريد · السودان">Telecom &amp; Post Regulatory Authority · Sudan</div>
-          <ul class="tl-list">
-            <li data-en="Assisted with field site measurements for several telecom operators." data-ar="ساعدت في قياسات المواقع الميدانية لعدد من مشغلي الاتصالات.">Assisted with field site measurements for several telecom operators.</li>
-            <li data-en="Led and scheduled a training programme, coordinating between trainees and instructors." data-ar="قدت وجدولت برنامجاً تدريبياً، بالتنسيق بين المتدربين والمدربين.">Led and scheduled a training programme, coordinating between trainees and instructors.</li>
-          </ul>
-          <div class="tl-tags">
-            <span class="tag" data-en="Field measurement" data-ar="القياسات الميدانية">Field measurement</span><span class="tag" data-en="Training coordination" data-ar="تنسيق التدريب">Training coordination</span>
+            <span class="tag" data-en="Fintech operations" data-ar="عمليات التقنية المالية">Fintech operations</span><span class="tag" data-en="Reconciliation" data-ar="المطابقة المالية">Reconciliation</span><span class="tag" data-en="Escalation management" data-ar="إدارة التصعيد">Escalation management</span>
           </div>
         </article>
       </li>
 
     </ol>
+
+    <details class="earlier">
+      <summary>
+        <span data-en="Earlier roles, 2017 to 2018" data-ar="أدوار سابقة، ٢٠١٧ إلى ٢٠١٨">Earlier roles, 2017 to 2018</span>
+        <span class="earlier-count keep-mono">3</span>
+      </summary>
+      <ol class="timeline">
+        <li class="tl-item rv">
+          <article class="tl-card card">
+            <div class="tl-top">
+              <span class="tl-period" data-en="Mar 2018 – Jun 2018" data-ar="مارس ٢٠١٨ – يونيو ٢٠١٨">Mar 2018 – Jun 2018</span>
+              <span class="badge badge-intern" data-en="Internship" data-ar="تدريب">Internship</span>
+            </div>
+            <h3 data-en="Technical Engineer" data-ar="مهندس فني">Technical Engineer</h3>
+            <div class="tl-org" data-en="Vision Valley · Khartoum, Sudan" data-ar="Vision Valley · الخرطوم، السودان">Vision Valley · Khartoum, Sudan</div>
+            <ul class="tl-list">
+              <li data-en="Installed and configured switches, routers, modems and cabling for major telecom carriers." data-ar="ثبّت وهيّأت المبدلات والموجّهات والمودمات والكابلات لكبرى شركات الاتصالات.">Installed and configured switches, routers, modems and cabling for major telecom carriers.</li>
+              <li data-en="Monitored network performance, implemented optimisation measures and maintained network security." data-ar="راقبت أداء الشبكة، ونفّذت إجراءات التحسين، وحافظت على أمن الشبكة.">Monitored network performance, implemented optimisation measures and maintained network security.</li>
+            </ul>
+            <div class="tl-tags">
+              <span class="tag" data-en="Switches &amp; routers" data-ar="المبدلات والموجهات">Switches &amp; routers</span><span class="tag" data-en="Structured cabling" data-ar="الكابلات المنظمة">Structured cabling</span>
+            </div>
+          </article>
+        </li>
+  
+        <li class="tl-item rv">
+          <article class="tl-card card">
+            <div class="tl-top">
+              <span class="tl-period" data-en="Oct 2017 – Mar 2018" data-ar="أكتوبر ٢٠١٧ – مارس ٢٠١٨">Oct 2017 – Mar 2018</span>
+            </div>
+            <h3 data-en="Customer Service Representative" data-ar="ممثل خدمة العملاء">Customer Service Representative</h3>
+            <div class="tl-org" data-en="MTN Sudan · Khartoum, Sudan" data-ar="MTN السودان · الخرطوم، السودان">MTN Sudan · Khartoum, Sudan</div>
+            <ul class="tl-list">
+              <li data-en="Managed <b>500+ customer accounts</b> with <b>99% accuracy</b> and resolved <b>95% of requests within 24 hours</b>." data-ar="أدرت <b>أكثر من ٥٠٠ حساب عميل</b> بدقة <b>٩٩٪</b> وحللت <b>٩٥٪ من الطلبات خلال ٢٤ ساعة</b>.">Managed <b>500+ customer accounts</b> with <b>99% accuracy</b> and resolved <b>95% of requests within 24 hours</b>.</li>
+              <li data-en="Resolved <b>80% of basic technical questions on the first call</b>, escalating the rest appropriately." data-ar="حللت <b>٨٠٪ من الأسئلة التقنية الأساسية من أول مكالمة</b>، وصعّدت الباقي بشكل مناسب.">Resolved <b>80% of basic technical questions on the first call</b>, escalating the rest appropriately.</li>
+              <li data-en="Contributed to a <b>15% rise in sales</b> through upselling, and achieved a <b>95% customer approval rating</b>." data-ar="ساهمت في <b>ارتفاع المبيعات ١٥٪</b> عبر البيع الإضافي، وحققت <b>تقييم رضا ٩٥٪</b>.">Contributed to a <b>15% rise in sales</b> through upselling, and achieved a <b>95% customer approval rating</b>.</li>
+            </ul>
+            <div class="tl-tags">
+              <span class="tag" data-en="Account management" data-ar="إدارة الحسابات">Account management</span><span class="tag" data-en="First-line technical support" data-ar="الدعم التقني الأول">First-line technical support</span>
+            </div>
+          </article>
+        </li>
+  
+        <li class="tl-item rv">
+          <article class="tl-card card">
+            <div class="tl-top">
+              <span class="tl-period" data-en="May 2017 – Jun 2017" data-ar="مايو ٢٠١٧ – يونيو ٢٠١٧">May 2017 – Jun 2017</span>
+              <span class="badge badge-intern" data-en="Internship" data-ar="تدريب">Internship</span>
+            </div>
+            <h3 data-en="Telecommunications Engineer" data-ar="مهندس اتصالات">Telecommunications Engineer</h3>
+            <div class="tl-org" data-en="Telecom &amp; Post Regulatory Authority · Sudan" data-ar="جهاز تنظيم الاتصالات والبريد · السودان">Telecom &amp; Post Regulatory Authority · Sudan</div>
+            <ul class="tl-list">
+              <li data-en="Assisted with field site measurements for several telecom operators." data-ar="ساعدت في قياسات المواقع الميدانية لعدد من مشغلي الاتصالات.">Assisted with field site measurements for several telecom operators.</li>
+              <li data-en="Led and scheduled a training programme, coordinating between trainees and instructors." data-ar="قدت وجدولت برنامجاً تدريبياً، بالتنسيق بين المتدربين والمدربين.">Led and scheduled a training programme, coordinating between trainees and instructors.</li>
+            </ul>
+            <div class="tl-tags">
+              <span class="tag" data-en="Field measurement" data-ar="القياسات الميدانية">Field measurement</span><span class="tag" data-en="Training coordination" data-ar="تنسيق التدريب">Training coordination</span>
+            </div>
+          </article>
+        </li>
+      </ol>
+    </details>
   </div>
 </section>
 
@@ -503,10 +493,10 @@
      infrastructure and some as an APK. The filter chips split them back out. -->
 <section class="section" id="projects">
   <div class="shell">
-    <div class="sec-head rv">
-      <span class="sec-index"><b>03</b> <span data-en="Impact" data-ar="الأثر">Impact</span></span>
-      <h2><span data-en="Things I have " data-ar="أعمال ">Things I have </span><em class="grad-text" data-en="actually built" data-ar="بنيتها فعلاً">actually built</em></h2>
-      <p class="sec-lede" data-en="Ten projects — ERP rollouts, infrastructure and six production Flutter apps. Every one of them is running, or ran, for real users." data-ar="عشرة مشاريع — تطبيقات ERP، وبنية تحتية، وستة تطبيقات Flutter إنتاجية. كل واحد منها يعمل، أو عمل، لمستخدمين حقيقيين.">Ten projects — ERP rollouts, infrastructure and six production Flutter apps. Every one of them is running, or ran, for real users.</p>
+    <div class="sec-head">
+      <span class="sec-index" data-en="Projects" data-ar="المشاريع">Projects</span>
+      <h2 data-en="Selected work" data-ar="أعمال مختارة">Selected work</h2>
+      <p class="sec-lede" data-en="ERP rollouts, infrastructure and six Flutter apps. Every one of them is in use, or was, by real people at work." data-ar="تطبيقات ERP وبنية تحتية وستة تطبيقات Flutter. كل واحد منها مستخدم، أو كان مستخدماً، من أناس حقيقيين في عملهم.">ERP rollouts, infrastructure and six Flutter apps. Every one of them is in use, or was, by real people at work.</p>
     </div>
 
     <div class="filters rv" role="group" data-en-aria="Filter projects by category" data-ar-aria="تصفية المشاريع حسب الفئة" aria-label="Filter projects by category">
@@ -529,7 +519,7 @@
             <h3 data-en="Odoo ERP rollout across the branch network" data-ar="تطبيق Odoo ERP عبر شبكة الفروع">Odoo ERP rollout across the branch network</h3>
           </div>
         </div>
-        <p data-en="Led Hilal Al-Sharq's digital transformation onto Odoo — migrating legacy data, training office staff and field sales reps on the Van Sales app, and rolling out branch by branch across Karbala, Al-Amarah and Basra. <b>The hard part was never the software</b>; it was change resistance, training gaps and messy legacy data." data-ar="قدت التحول الرقمي لشركة هلال الشرق إلى Odoo — بترحيل البيانات القديمة، وتدريب موظفي المكاتب ومندوبي المبيعات الميدانيين على تطبيق Van Sales، والتنفيذ فرعاً بفرع في كربلاء والعمارة والبصرة. <b>لم يكن التحدي في البرنامج</b>، بل في مقاومة التغيير وفجوات التدريب وفوضى البيانات القديمة.">Led Hilal Al-Sharq's digital transformation onto Odoo — migrating legacy data, training office staff and field sales reps on the Van Sales app, and rolling out branch by branch across Karbala, Al-Amarah and Basra. <b>The hard part was never the software</b>; it was change resistance, training gaps and messy legacy data.</p>
+        <p data-en="Moved Hilal Al-Sharq onto Odoo: migrated the legacy data, trained office staff and field sales reps on the Van Sales app, and rolled out branch by branch across Karbala, Al-Amarah and Basra. <b>The hard part was never the software.</b> It was change resistance, training gaps and messy legacy data." data-ar="قدت التحول الرقمي لشركة هلال الشرق إلى Odoo: بترحيل البيانات القديمة، وتدريب موظفي المكاتب ومندوبي المبيعات الميدانيين على تطبيق Van Sales، والتنفيذ فرعاً بفرع في كربلاء والعمارة والبصرة. <b>لم يكن التحدي في البرنامج</b>، بل في مقاومة التغيير وفجوات التدريب وفوضى البيانات القديمة.">Moved Hilal Al-Sharq onto Odoo: migrated the legacy data, trained office staff and field sales reps on the Van Sales app, and rolled out branch by branch across Karbala, Al-Amarah and Basra. <b>The hard part was never the software.</b> It was change resistance, training gaps and messy legacy data.</p>
         <div class="p-tags"><span class="tag">Odoo ERP</span><span class="tag" data-en="Data migration" data-ar="ترحيل البيانات">Data migration</span><span class="tag" data-en="Multi-branch" data-ar="متعدد الفروع">Multi-branch</span></div>
       </article>
 
@@ -538,7 +528,7 @@
           <span class="p-ico" aria-hidden="true"><svg><use href="#i-tool"/></svg></span>
           <div>
             <span class="p-cat" data-en="Automation · Internal tools" data-ar="أتمتة · أدوات داخلية">Automation · Internal tools</span>
-            <h3 data-en="Internal tooling — 70% less daily data entry" data-ar="أدوات داخلية — انخفاض إدخال البيانات ٧٠٪">Internal tooling — 70% less daily data entry</h3>
+            <h3 data-en="Internal tools that cut data entry by 70%" data-ar="أدوات داخلية خفّضت إدخال البيانات ٧٠٪">Internal tools that cut data entry by 70%</h3>
           </div>
         </div>
         <p data-en="Designed and launched two internal tools that cut repetitive support requests and sped up onboarding for new and rotating staff. Daily data-entry time in the affected departments dropped by roughly <b>70%</b>, and the institutional knowledge now lives inside the tools instead of in one person's head." data-ar="صممت وأطلقت أداتين داخليتين قلّلتا طلبات الدعم المتكررة وسرّعتا انضمام الموظفين الجدد والمتناوبين. انخفض زمن إدخال البيانات اليومي في الأقسام المعنية بنحو <b>٧٠٪</b>، وأصبحت المعرفة المؤسسية داخل الأدوات بدلاً من رأس شخص واحد.">Designed and launched two internal tools that cut repetitive support requests and sped up onboarding for new and rotating staff. Daily data-entry time in the affected departments dropped by roughly <b>70%</b>, and the institutional knowledge now lives inside the tools instead of in one person's head.</p>
@@ -565,7 +555,7 @@
             <h3 data-en="Hands-on offensive security practice" data-ar="ممارسة عملية في الأمن الهجومي">Hands-on offensive security practice</h3>
           </div>
         </div>
-        <p data-en="Active on TryHackMe, working CTF challenges across XSS, cryptography, IDOR and session hijacking. It isn't a job title — it's how I keep the defensive side of my work honest, because <b>you secure infrastructure better once you have spent time attacking it</b>." data-ar="نشط على TryHackMe، أعمل على تحديات CTF في XSS والتشفير و IDOR واختطاف الجلسات. ليست وظيفة — بل الطريقة التي أبقي بها الجانب الدفاعي من عملي صادقاً، لأنك <b>تحمي البنية التحتية بشكل أفضل بعد أن تقضي وقتاً في مهاجمتها</b>.">Active on TryHackMe, working CTF challenges across XSS, cryptography, IDOR and session hijacking. It isn't a job title — it's how I keep the defensive side of my work honest, because <b>you secure infrastructure better once you have spent time attacking it</b>.</p>
+        <p data-en="Active on TryHackMe, working CTF challenges in XSS, cryptography, IDOR and session hijacking. It isn't my job title. It keeps the defensive side of my work honest, because <b>you secure infrastructure better once you have spent time attacking it</b>." data-ar="نشط على TryHackMe، أعمل على تحديات CTF في XSS والتشفير و IDOR واختطاف الجلسات. ليست وظيفة، بل الطريقة التي أبقي بها الجانب الدفاعي من عملي صادقاً، لأنك <b>تحمي البنية التحتية بشكل أفضل بعد أن تقضي وقتاً في مهاجمتها</b>.">Active on TryHackMe, working CTF challenges in XSS, cryptography, IDOR and session hijacking. It isn't my job title. It keeps the defensive side of my work honest, because <b>you secure infrastructure better once you have spent time attacking it</b>.</p>
         <div class="p-tags"><span class="tag">TryHackMe</span><span class="tag">CTF</span><span class="tag" data-en="Web exploitation" data-ar="استغلال الويب">Web exploitation</span></div>
       </article>
 
@@ -617,7 +607,7 @@
           </div>
         </div>
         <div class="p-meta">v1.0.0 · Odoo</div>
-        <p data-en="A leave-management client for Odoo. Employees request time off and managers approve it, built on BLoC with dependency injection and an auth-guarded router — fully bilingual with proper right-to-left layout." data-ar="عميل لإدارة الإجازات مع Odoo. يطلب الموظفون إجازاتهم ويوافق عليها المدراء، مبني على BLoC مع حقن التبعيات وموجّه محمي بالمصادقة — ثنائي اللغة بالكامل مع دعم صحيح للاتجاه من اليمين لليسار.">A leave-management client for Odoo. Employees request time off and managers approve it, built on BLoC with dependency injection and an auth-guarded router — fully bilingual with proper right-to-left layout.</p>
+        <p data-en="A leave-management client for Odoo. Employees request time off and managers approve it. Built on BLoC with dependency injection and an auth-guarded router, and fully bilingual with a proper right-to-left layout." data-ar="عميل لإدارة الإجازات مع Odoo. يطلب الموظفون إجازاتهم ويوافق عليها المدراء، مبني على BLoC مع حقن التبعيات وموجّه محمي بالمصادقة، ثنائي اللغة بالكامل مع دعم صحيح للاتجاه من اليمين لليسار.">A leave-management client for Odoo. Employees request time off and managers approve it. Built on BLoC with dependency injection and an auth-guarded router, and fully bilingual with a proper right-to-left layout.</p>
         <div class="p-tags"><span class="tag">Flutter</span><span class="tag">BLoC</span><span class="tag">go_router</span><span class="tag">Odoo</span><span class="tag">RTL</span></div>
       </article>
 
@@ -643,7 +633,7 @@
           </div>
         </div>
         <div class="p-meta" data-en="v2.0.0 · Device security" data-ar="v2.0.0 · أمن الأجهزة">v2.0.0 · Device security</div>
-        <p data-en="A password-locked Android launcher that keeps a managed device inside an approved set of apps. <b>The admin passphrase is never stored — only its hash</b> — and the policy cache survives restarts." data-ar="مشغّل أندرويد محمي بكلمة مرور يُبقي الجهاز المُدار ضمن مجموعة تطبيقات معتمدة. <b>لا تُخزَّن كلمة مرور المسؤول إطلاقاً — بل بصمتها فقط</b> — وتبقى سياسة العمل محفوظة بعد إعادة التشغيل.">A password-locked Android launcher that keeps a managed device inside an approved set of apps. <b>The admin passphrase is never stored — only its hash</b> — and the policy cache survives restarts.</p>
+        <p data-en="A password-locked Android launcher that keeps a managed device inside an approved set of apps. <b>The admin passphrase is never stored, only its hash</b>, and the policy cache survives restarts." data-ar="مشغّل أندرويد محمي بكلمة مرور يُبقي الجهاز المُدار ضمن مجموعة تطبيقات معتمدة. <b>لا تُخزَّن كلمة مرور المسؤول إطلاقاً، بل بصمتها فقط</b>، وتبقى سياسة العمل محفوظة بعد إعادة التشغيل.">A password-locked Android launcher that keeps a managed device inside an approved set of apps. <b>The admin passphrase is never stored, only its hash</b>, and the policy cache survives restarts.</p>
         <div class="p-tags"><span class="tag">Flutter</span><span class="tag">Riverpod</span><span class="tag">go_router</span><span class="tag" data-en="Secure storage" data-ar="تخزين آمن">Secure storage</span></div>
       </article>
 
@@ -651,7 +641,7 @@
 
     <p class="card-note rv">
       <svg aria-hidden="true"><use href="#i-shield"/></svg>
-      <span data-en="The Flutter sources are private company or personal work — happy to walk through the code on request." data-ar="مصادر تطبيقات Flutter خاصة بالشركة أو عمل شخصي — يسعدني استعراض الشيفرة عند الطلب.">The Flutter sources are private company or personal work — happy to walk through the code on request.</span>
+      <span data-en="The Flutter sources are private (company or personal work). I'm happy to walk through the code on request." data-ar="مصادر تطبيقات Flutter خاصة بالشركة أو عمل شخصي، ويسعدني استعراض الشيفرة عند الطلب.">The Flutter sources are private (company or personal work). I'm happy to walk through the code on request.</span>
     </p>
   </div>
 </section>
@@ -661,97 +651,52 @@
      skill implies a precision nobody actually has. -->
 <section class="section" id="skills">
   <div class="shell">
-    <div class="sec-head rv">
-      <span class="sec-index"><b>04</b> <span data-en="Capabilities" data-ar="القدرات">Capabilities</span></span>
-      <h2><span data-en="The stack I " data-ar="المنظومة التي " >The stack I </span><em class="grad-text" data-en="run every day" data-ar="أشغّلها كل يوم">run every day</em></h2>
-      <p class="sec-lede" data-en="The systems I actually operate — not a list of everything I have ever touched." data-ar="الأنظمة التي أشغّلها فعلياً — وليست قائمة بكل ما جربته يوماً.">The systems I actually operate — not a list of everything I have ever touched.</p>
+    <div class="sec-head">
+      <span class="sec-index" data-en="Skills" data-ar="المهارات">Skills</span>
+      <h2 data-en="What I work with" data-ar="ما أعمل به">What I work with</h2>
+      <p class="sec-lede" data-en="The systems I operate day to day, grouped by area. Not a list of everything I have ever touched." data-ar="الأنظمة التي أشغّلها يومياً، مجمّعة حسب المجال. وليست قائمة بكل ما جرّبته يوماً.">The systems I operate day to day, grouped by area. Not a list of everything I have ever touched.</p>
     </div>
 
     <div class="stack-groups">
-
-      <div class="stack-group card rv">
-        <div class="group-head">
-          <h3 data-en="Business systems" data-ar="أنظمة الأعمال">Business systems</h3>
-          <span class="keep-mono">01</span>
-        </div>
-        <div class="stack-list">
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-erp"/></svg><span class="stack-name">Odoo ERP</span><span class="stack-note" data-en="Admin · Functional" data-ar="إدارة · وظيفي">Admin · Functional</span></div>
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-route"/></svg><span class="stack-name">Odoo Van Sales</span><span class="stack-note" data-en="Field rollout" data-ar="تنفيذ ميداني">Field rollout</span></div>
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-cloud"/></svg><span class="stack-name">Microsoft 365</span><span class="stack-note" data-en="Tenant admin" data-ar="إدارة المستأجر">Tenant admin</span></div>
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-users"/></svg><span class="stack-name">Active Directory</span><span class="stack-note" data-en="Identity · GPO" data-ar="الهوية · GPO">Identity · GPO</span></div>
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-server"/></svg><span class="stack-name">Windows Server</span><span class="stack-note">IIS · Roles</span></div>
-        </div>
+      <div class="stack-group card">
+        <h3 data-en="Business systems" data-ar="أنظمة الأعمال">Business systems</h3>
+        <ul class="stack-list">
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-erp"/></svg><span class="stack-name">Odoo ERP</span><span class="stack-note" data-en="Admin · Functional" data-ar="إدارة · وظيفي">Admin · Functional</span></li>
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-route"/></svg><span class="stack-name">Odoo Van Sales</span><span class="stack-note" data-en="Field rollout" data-ar="تنفيذ ميداني">Field rollout</span></li>
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-cloud"/></svg><span class="stack-name">Microsoft 365</span><span class="stack-note" data-en="Tenant admin" data-ar="إدارة المستأجر">Tenant admin</span></li>
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-users"/></svg><span class="stack-name">Active Directory</span><span class="stack-note" data-en="Identity · GPO" data-ar="الهوية · GPO">Identity · GPO</span></li>
+        </ul>
+        <div class="skill-cloud"><span class="tag" data-en="Data migration" data-ar="ترحيل البيانات">Data migration</span><span class="tag" data-en="Licence compliance" data-ar="الامتثال للتراخيص">Licence compliance</span><span class="tag" data-en="IT documentation" data-ar="توثيق تقنية المعلومات">IT documentation</span><span class="tag">Help Desk / ITSM</span></div>
       </div>
-
-      <div class="stack-group card rv rv-d1">
-        <div class="group-head">
-          <h3 data-en="Infrastructure &amp; continuity" data-ar="البنية التحتية والاستمرارية">Infrastructure &amp; continuity</h3>
-          <span class="keep-mono">02</span>
-        </div>
-        <div class="stack-list">
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-layers"/></svg><span class="stack-name">VMware ESXi</span><span class="stack-note" data-en="Virtualisation" data-ar="المحاكاة الافتراضية">Virtualisation</span></div>
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-cube"/></svg><span class="stack-name">Proxmox VE</span><span class="stack-note" data-en="Virtualisation" data-ar="المحاكاة الافتراضية">Virtualisation</span></div>
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="stack-name">FreePBX</span><span class="stack-note">SIP · IVR</span></div>
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-database"/></svg><span class="stack-name" data-en="Backup &amp; recovery" data-ar="النسخ والاستعادة">Backup &amp; recovery</span><span class="stack-note" data-en="Continuity" data-ar="الاستمرارية">Continuity</span></div>
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-pulse"/></svg><span class="stack-name" data-en="Network monitoring" data-ar="مراقبة الشبكة">Network monitoring</span><span class="stack-note" data-en="Performance" data-ar="الأداء">Performance</span></div>
-        </div>
+      <div class="stack-group card">
+        <h3 data-en="Infrastructure" data-ar="البنية التحتية">Infrastructure</h3>
+        <ul class="stack-list">
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-server"/></svg><span class="stack-name">Windows Server</span><span class="stack-note">IIS · Roles</span></li>
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-layers"/></svg><span class="stack-name">VMware ESXi · Proxmox</span><span class="stack-note" data-en="Virtualisation" data-ar="المحاكاة الافتراضية">Virtualisation</span></li>
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="stack-name">FreePBX</span><span class="stack-note">SIP · IVR</span></li>
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-database"/></svg><span class="stack-name" data-en="Backup &amp; recovery" data-ar="النسخ والاستعادة">Backup &amp; recovery</span><span class="stack-note" data-en="Continuity" data-ar="الاستمرارية">Continuity</span></li>
+        </ul>
+        <div class="skill-cloud"><span class="tag" data-en="Linux administration" data-ar="إدارة Linux">Linux administration</span><span class="tag">VLAN / DHCP</span><span class="tag" data-en="Network monitoring" data-ar="مراقبة الشبكة">Network monitoring</span></div>
       </div>
-
-      <div class="stack-group card rv rv-d2">
-        <div class="group-head">
-          <h3 data-en="Security &amp; development" data-ar="الأمن والتطوير">Security &amp; development</h3>
-          <span class="keep-mono">03</span>
-        </div>
-        <div class="stack-list">
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-shield"/></svg><span class="stack-name">Kaspersky</span><span class="stack-note" data-en="Endpoint security" data-ar="أمن الأجهزة">Endpoint security</span></div>
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-target"/></svg><span class="stack-name">Burp Suite</span><span class="stack-note" data-en="Web testing" data-ar="اختبار الويب">Web testing</span></div>
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-tool"/></svg><span class="stack-name">Metasploit</span><span class="stack-note" data-en="Exploitation" data-ar="الاستغلال">Exploitation</span></div>
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-mobile"/></svg><span class="stack-name">Flutter · Dart</span><span class="stack-note" data-en="Mobile apps" data-ar="تطبيقات الجوال">Mobile apps</span></div>
-          <div class="stack-row"><svg aria-hidden="true"><use href="#i-code"/></svg><span class="stack-name">Python</span><span class="stack-note" data-en="Scripting" data-ar="البرمجة النصية">Scripting</span></div>
-        </div>
+      <div class="stack-group card">
+        <h3 data-en="Security" data-ar="الأمن">Security</h3>
+        <ul class="stack-list">
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-shield"/></svg><span class="stack-name">Kaspersky Endpoint</span><span class="stack-note" data-en="Endpoint policy" data-ar="سياسة الأجهزة">Endpoint policy</span></li>
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-target"/></svg><span class="stack-name">Burp Suite</span><span class="stack-note" data-en="Web testing" data-ar="اختبار الويب">Web testing</span></li>
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-tool"/></svg><span class="stack-name">Metasploit</span><span class="stack-note" data-en="Pen testing" data-ar="اختبار الاختراق">Pen testing</span></li>
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-pulse"/></svg><span class="stack-name">OpenVAS</span><span class="stack-note" data-en="Vulnerability scans" data-ar="فحص الثغرات">Vulnerability scans</span></li>
+        </ul>
+        <div class="skill-cloud"><span class="tag" data-en="Network security" data-ar="أمن الشبكات">Network security</span><span class="tag">Hydra / Hashcat</span><span class="tag">SQLi · XSS · IDOR</span></div>
       </div>
-
-    </div>
-
-    <div class="stack-groups">
-      <div class="stack-group card rv">
-        <div class="group-head">
-          <h3 data-en="Infrastructure &amp; systems" data-ar="البنية التحتية والأنظمة">Infrastructure &amp; systems</h3>
-          <span class="keep-mono">04</span>
-        </div>
-        <div class="skill-cloud">
-          <span class="tag">Active Directory</span><span class="tag">Windows Server</span><span class="tag" data-en="Linux administration" data-ar="إدارة Linux">Linux administration</span><span class="tag">VMware ESXi</span><span class="tag">Proxmox</span><span class="tag">IIS</span><span class="tag" data-en="Network administration" data-ar="إدارة الشبكات">Network administration</span><span class="tag" data-en="Backup &amp; recovery" data-ar="النسخ والاستعادة">Backup &amp; recovery</span><span class="tag">VoIP / FreePBX</span>
-        </div>
-      </div>
-
-      <div class="stack-group card rv rv-d1">
-        <div class="group-head">
-          <h3 data-en="Enterprise applications" data-ar="تطبيقات المؤسسات">Enterprise applications</h3>
-          <span class="keep-mono">05</span>
-        </div>
-        <div class="skill-cloud">
-          <span class="tag">Odoo ERP</span><span class="tag">Microsoft 365</span><span class="tag" data-en="Digital transformation" data-ar="التحول الرقمي">Digital transformation</span><span class="tag" data-en="Data migration" data-ar="ترحيل البيانات">Data migration</span><span class="tag" data-en="Licence compliance" data-ar="الامتثال للتراخيص">Licence compliance</span><span class="tag" data-en="IT documentation" data-ar="توثيق تقنية المعلومات">IT documentation</span><span class="tag">Help Desk / ITSM</span>
-        </div>
-      </div>
-
-      <div class="stack-group card rv rv-d2">
-        <div class="group-head">
-          <h3 data-en="Security" data-ar="الأمن">Security</h3>
-          <span class="keep-mono">06</span>
-        </div>
-        <div class="skill-cloud">
-          <span class="tag">Kaspersky Endpoint</span><span class="tag" data-en="Network security" data-ar="أمن الشبكات">Network security</span><span class="tag" data-en="Vulnerability assessment" data-ar="تقييم الثغرات">Vulnerability assessment</span><span class="tag">Metasploit</span><span class="tag">Burp Suite</span><span class="tag">OpenVAS</span><span class="tag">Hydra / Hashcat</span><span class="tag">SQL Injection</span><span class="tag">XSS</span><span class="tag">IDOR</span><span class="tag" data-en="Session hijacking" data-ar="اختطاف الجلسات">Session hijacking</span><span class="tag" data-en="Malware &amp; exploit dev" data-ar="تطوير البرمجيات الخبيثة والثغرات">Malware &amp; exploit dev</span>
-        </div>
-      </div>
-
-      <div class="stack-group card rv rv-d3">
-        <div class="group-head">
-          <h3 data-en="Development &amp; leadership" data-ar="التطوير والقيادة">Development &amp; leadership</h3>
-          <span class="keep-mono">07</span>
-        </div>
-        <div class="skill-cloud">
-          <span class="tag">Flutter / Dart</span><span class="tag">Python</span><span class="tag">Riverpod / BLoC</span><span class="tag">SQLite / Drift</span><span class="tag">Firebase</span><span class="tag">Supabase</span><span class="tag" data-en="Team leadership" data-ar="قيادة الفرق">Team leadership</span><span class="tag" data-en="Staff training" data-ar="تدريب الموظفين">Staff training</span><span class="tag" data-en="Performance analytics" data-ar="تحليل الأداء">Performance analytics</span><span class="tag">SLA management</span>
-        </div>
+      <div class="stack-group card">
+        <h3 data-en="Development &amp; leadership" data-ar="التطوير والقيادة">Development &amp; leadership</h3>
+        <ul class="stack-list">
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-mobile"/></svg><span class="stack-name">Flutter · Dart</span><span class="stack-note" data-en="Mobile apps" data-ar="تطبيقات الجوال">Mobile apps</span></li>
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-code"/></svg><span class="stack-name">Python</span><span class="stack-note" data-en="Scripting" data-ar="البرمجة النصية">Scripting</span></li>
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-database"/></svg><span class="stack-name">SQLite · Firebase · Supabase</span><span class="stack-note" data-en="Data &amp; sync" data-ar="البيانات والمزامنة">Data &amp; sync</span></li>
+          <li class="stack-row"><svg aria-hidden="true"><use href="#i-users"/></svg><span class="stack-name" data-en="Team leadership" data-ar="قيادة الفرق">Team leadership</span><span class="stack-note" data-en="Training · SLAs" data-ar="التدريب · اتفاقيات الخدمة">Training · SLAs</span></li>
+        </ul>
+        <div class="skill-cloud"><span class="tag">Riverpod / BLoC</span><span class="tag" data-en="Staff training" data-ar="تدريب الموظفين">Staff training</span><span class="tag" data-en="Performance analytics" data-ar="تحليل الأداء">Performance analytics</span></div>
       </div>
     </div>
   </div>
@@ -760,12 +705,31 @@
 <!-- ══ CREDENTIALS ══ -->
 <section class="section" id="credentials">
   <div class="shell">
-    <div class="sec-head rv">
-      <span class="sec-index"><b>05</b> <span data-en="Credentials" data-ar="الاعتمادات">Credentials</span></span>
-      <h2><span data-en="Certifications, training " data-ar="الشهادات والتدريب " >Certifications, training </span><em class="grad-text" data-en="&amp; education" data-ar="والتعليم">&amp; education</em></h2>
-      <p class="sec-lede" data-en="Fourteen credentials across cybersecurity, ethical hacking and IT infrastructure — all earned while working full time — on an electronic engineering foundation." data-ar="أربع عشرة شهادة في الأمن السيبراني والاختراق الأخلاقي والبنية التحتية لتقنية المعلومات — جميعها أثناء العمل بدوام كامل — على أساس من الهندسة الإلكترونية.">Fourteen credentials across cybersecurity, ethical hacking and IT infrastructure — all earned while working full time — on an electronic engineering foundation.</p>
+    <div class="sec-head">
+      <span class="sec-index" data-en="Credentials" data-ar="الاعتمادات">Credentials</span>
+      <h2 data-en="Certifications and education" data-ar="الشهادات والتعليم">Certifications and education</h2>
+      <p class="sec-lede" data-en="Fourteen certifications in cybersecurity and IT infrastructure, all earned while working full time, on top of a degree in electronic engineering." data-ar="أربع عشرة شهادة في الأمن السيبراني والبنية التحتية لتقنية المعلومات، جميعها أثناء العمل بدوام كامل، إلى جانب شهادة في الهندسة الإلكترونية.">Fourteen certifications in cybersecurity and IT infrastructure, all earned while working full time, on top of a degree in electronic engineering.</p>
     </div>
 
+    <div class="edu-grid">
+      <article class="edu card rv">
+        <span class="edu-level">BSc</span>
+        <h3 data-en="Bachelor of Science, Electronic Engineering" data-ar="بكالوريوس علوم، الهندسة الإلكترونية">Bachelor of Science, Electronic Engineering</h3>
+        <div class="meta" data-en="Sudan University of Science and Technology" data-ar="جامعة السودان للعلوم والتكنولوجيا">Sudan University of Science and Technology</div>
+        <div class="meta-sub" data-en="Faculty of Engineering, Computer &amp; Network Department<br/>Khartoum, Sudan" data-ar="كلية الهندسة، قسم الحاسوب والشبكات<br/>الخرطوم، السودان">Faculty of Engineering, Computer &amp; Network Department<br/>Khartoum, Sudan</div>
+        <p data-en="Signals, communications and electronics. It's why I still debug a network from the physical layer up." data-ar="الإشارات والاتصالات والإلكترونيات. ولهذا ما زلت أشخّص الشبكة بدءاً من الطبقة الفيزيائية.">Signals, communications and electronics. It's why I still debug a network from the physical layer up.</p>
+      </article>
+
+      <article class="edu card rv rv-d1">
+        <span class="edu-level" data-en="Diploma" data-ar="دبلوم">Diploma</span>
+        <h3 data-en="Diploma, Electronic Engineering (Telecommunications)" data-ar="دبلوم، الهندسة الإلكترونية (الاتصالات)">Diploma, Electronic Engineering (Telecommunications)</h3>
+        <div class="meta" data-en="Telecommunication Department" data-ar="قسم الاتصالات">Telecommunication Department</div>
+        <div class="meta-sub" data-en="Khartoum, Sudan" data-ar="الخرطوم، السودان">Khartoum, Sudan</div>
+        <p data-en="Signal transmission and network infrastructure, which led straight into my first telecom field work." data-ar="إرسال الإشارات والبنية التحتية للشبكات، وهو ما قادني مباشرة إلى أول عمل ميداني في الاتصالات.">Signal transmission and network infrastructure, which led straight into my first telecom field work.</p>
+      </article>
+    </div>
+
+    <h3 class="sub-head" data-en="Certifications" data-ar="الشهادات">Certifications</h3>
     <div class="certs">
       <article class="cert card rv">
         <span class="cert-issuer">Pearson</span>
@@ -776,7 +740,7 @@
       </article>
       <article class="cert card rv">
         <span class="cert-issuer">Packt</span>
-        <h3 data-en="CompTIA Security+ (SY0-701) — Total Course" data-ar="CompTIA Security+ ‏(SY0-701) — الدورة الشاملة">CompTIA Security+ (SY0-701) — Total Course</h3>
+        <h3 data-en="CompTIA Security+ (SY0-701) Total Course" data-ar="CompTIA Security+ ‏(SY0-701) الدورة الشاملة">CompTIA Security+ (SY0-701) Total Course</h3>
         <div class="cert-when" data-en="March 2026" data-ar="مارس ٢٠٢٦">March 2026</div>
         <div class="cert-what" data-en="Threat analysis, cryptography, identity management" data-ar="تحليل التهديدات، التشفير، إدارة الهوية">Threat analysis, cryptography, identity management</div>
         <div class="cert-id keep-mono">ID · 50I725BNHDOY</div>
@@ -832,28 +796,28 @@
       <article class="cert card rv">
         <span class="cert-issuer">TryHackMe</span>
         <h3 data-en="Jr Penetration Tester" data-ar="مختبر اختراق مبتدئ">Jr Penetration Tester</h3>
-        <div class="cert-when" data-en="February 2026 — expires February 2029" data-ar="فبراير ٢٠٢٦ — تنتهي فبراير ٢٠٢٩">February 2026 — expires February 2029</div>
+        <div class="cert-when" data-en="February 2026 – expires February 2029" data-ar="فبراير ٢٠٢٦ – تنتهي فبراير ٢٠٢٩">February 2026 – expires February 2029</div>
         <div class="cert-what">Metasploit · Burp Suite · Hydra · SQLi · Privilege Escalation</div>
         <div class="cert-id keep-mono">ID · THM-9XPEGNKKNS</div>
       </article>
       <article class="cert card rv">
         <span class="cert-issuer">TryHackMe</span>
         <h3 data-en="Web Fundamentals" data-ar="أساسيات الويب">Web Fundamentals</h3>
-        <div class="cert-when" data-en="February 2026 — expires February 2029" data-ar="فبراير ٢٠٢٦ — تنتهي فبراير ٢٠٢٩">February 2026 — expires February 2029</div>
+        <div class="cert-when" data-en="February 2026 – expires February 2029" data-ar="فبراير ٢٠٢٦ – تنتهي فبراير ٢٠٢٩">February 2026 – expires February 2029</div>
         <div class="cert-what">Burp Suite · XSS · Reverse Shell</div>
         <div class="cert-id keep-mono">ID · THM-UKNJNMJP2T</div>
       </article>
       <article class="cert card rv">
         <span class="cert-issuer">TryHackMe</span>
         <h3 data-en="Cyber Security 101" data-ar="الأمن السيبراني ١٠١">Cyber Security 101</h3>
-        <div class="cert-when" data-en="February 2026 — expires February 2029" data-ar="فبراير ٢٠٢٦ — تنتهي فبراير ٢٠٢٩">February 2026 — expires February 2029</div>
+        <div class="cert-when" data-en="February 2026 – expires February 2029" data-ar="فبراير ٢٠٢٦ – تنتهي فبراير ٢٠٢٩">February 2026 – expires February 2029</div>
         <div class="cert-what" data-en="Core cybersecurity concepts and defensive fundamentals" data-ar="المفاهيم الأساسية للأمن السيبراني وأسس الدفاع">Core cybersecurity concepts and defensive fundamentals</div>
         <div class="cert-id keep-mono">ID · THM-9AGVFFEFPH</div>
       </article>
       <article class="cert card rv">
         <span class="cert-issuer">TryHackMe</span>
         <h3 data-en="Pre Security" data-ar="ما قبل الأمن">Pre Security</h3>
-        <div class="cert-when" data-en="January 2026 — expires January 2029" data-ar="يناير ٢٠٢٦ — تنتهي يناير ٢٠٢٩">January 2026 — expires January 2029</div>
+        <div class="cert-when" data-en="January 2026 – expires January 2029" data-ar="يناير ٢٠٢٦ – تنتهي يناير ٢٠٢٩">January 2026 – expires January 2029</div>
         <div class="cert-what">Linux · Windows · Networking foundations</div>
         <div class="cert-id keep-mono">ID · THM-KNFSXXO6TX</div>
       </article>
@@ -865,36 +829,16 @@
         <div class="cert-id keep-mono">ID · 46C8H7V3S8BS</div>
       </article>
     </div>
-
-    <div class="edu-grid">
-      <article class="edu card rv">
-        <span class="edu-level">BSc</span>
-        <h3 data-en="Bachelor of Science, Electronic Engineering" data-ar="بكالوريوس علوم، الهندسة الإلكترونية">Bachelor of Science, Electronic Engineering</h3>
-        <div class="meta" data-en="Sudan University of Science and Technology" data-ar="جامعة السودان للعلوم والتكنولوجيا">Sudan University of Science and Technology</div>
-        <div class="meta-sub" data-en="Faculty of Engineering — Computer &amp; Network Department<br/>Khartoum, Sudan" data-ar="كلية الهندسة — قسم الحاسوب والشبكات<br/>الخرطوم، السودان">Faculty of Engineering — Computer &amp; Network Department<br/>Khartoum, Sudan</div>
-        <p data-en="A foundation in <strong>electronic engineering</strong> underpins every decision I make in infrastructure and security — it means understanding systems from the ground up rather than from the manual." data-ar="أساس في <strong>الهندسة الإلكترونية</strong> يدعم كل قرار أتخذه في البنية التحتية والأمن — فهو يعني فهم الأنظمة من جذورها لا من دليل الاستخدام.">A foundation in <strong>electronic engineering</strong> underpins every decision I make in infrastructure and security — it means understanding systems from the ground up rather than from the manual.</p>
-        <p data-en="The degree gave me a rigorous grounding in signals, communications and electronics — knowledge that translates directly into system-level intuition when diagnosing network and security problems." data-ar="منحتني الدرجة أساساً تقنياً رصيناً في الإشارات والاتصالات والإلكترونيات — معرفة تُترجم مباشرة إلى حدس على مستوى الأنظمة عند تشخيص مشكلات الشبكات والأمن.">The degree gave me a rigorous grounding in signals, communications and electronics — knowledge that translates directly into system-level intuition when diagnosing network and security problems.</p>
-      </article>
-
-      <article class="edu card rv rv-d1">
-        <span class="edu-level" data-en="Diploma" data-ar="دبلوم">Diploma</span>
-        <h3 data-en="Diploma, Electronic Engineering — Telecommunications" data-ar="دبلوم، الهندسة الإلكترونية — الاتصالات">Diploma, Electronic Engineering — Telecommunications</h3>
-        <div class="meta" data-en="Telecommunication Department" data-ar="قسم الاتصالات">Telecommunication Department</div>
-        <div class="meta-sub" data-en="Signal transmission and network infrastructure<br/>Khartoum, Sudan" data-ar="إرسال الإشارات والبنية التحتية للشبكات<br/>الخرطوم، السودان">Signal transmission and network infrastructure<br/>Khartoum, Sudan</div>
-        <p data-en="Telecommunications engineering gave me a deep understanding of <strong>how networks actually communicate</strong> — the backbone of every infrastructure and security decision since." data-ar="أعطتني هندسة الاتصالات فهماً عميقاً لـ<strong>كيفية تواصل الشبكات فعلياً</strong> — وهو العمود الفقري لكل قرار بنية تحتية وأمن اتخذته منذ ذلك الحين.">Telecommunications engineering gave me a deep understanding of <strong>how networks actually communicate</strong> — the backbone of every infrastructure and security decision since.</p>
-        <p data-en="This specialisation shaped my work in network administration, infrastructure monitoring and the hands-on configuration of telecom equipment throughout my career." data-ar="شكّل هذا التخصص عملي في إدارة الشبكات ومراقبة البنية التحتية والتهيئة العملية لمعدات الاتصالات طوال مسيرتي المهنية.">This specialisation shaped my work in network administration, infrastructure monitoring and the hands-on configuration of telecom equipment throughout my career.</p>
-      </article>
-    </div>
   </div>
 </section>
 
 <!-- ══ CONTACT ══ -->
 <section class="section" id="contact">
   <div class="shell">
-    <div class="sec-head rv">
-      <span class="sec-index"><b>06</b> <span data-en="Contact" data-ar="التواصل">Contact</span></span>
-      <h2><span data-en="Let's build something " data-ar="لنبنِ شيئاً ">Let's build something </span><em class="grad-text" data-en="that works." data-ar="يعمل فعلاً.">that works.</em></h2>
-      <p class="sec-lede" data-en="Open to IT management, infrastructure, cybersecurity and Flutter development roles. Based in Baghdad — available on-site or remote." data-ar="متاح لأدوار في إدارة تقنية المعلومات والبنية التحتية والأمن السيبراني وتطوير Flutter. مقيم في بغداد — متاح حضورياً أو عن بُعد.">Open to IT management, infrastructure, cybersecurity and Flutter development roles. Based in Baghdad — available on-site or remote.</p>
+    <div class="sec-head">
+      <span class="sec-index" data-en="Contact" data-ar="التواصل">Contact</span>
+      <h2 data-en="Let's talk" data-ar="لنتحدث">Let's talk</h2>
+      <p class="sec-lede" data-en="I'm open to IT management, infrastructure, security and Flutter roles, in Baghdad or remote. Email is the quickest way to reach me." data-ar="متاح لأدوار في إدارة تقنية المعلومات والبنية التحتية والأمن وتطوير Flutter، في بغداد أو عن بُعد. البريد الإلكتروني أسرع طريقة للتواصل معي.">I'm open to IT management, infrastructure, security and Flutter roles, in Baghdad or remote. Email is the quickest way to reach me.</p>
     </div>
 
     <div class="contact-grid">
@@ -960,7 +904,7 @@
           <svg aria-hidden="true"><use href="#i-mail"/></svg>
           <span data-en="Compose message" data-ar="إنشاء الرسالة">Compose message</span>
         </button>
-        <p class="form-note" data-en="This opens the message in your own email client — nothing is sent through this site and nothing is stored here." data-ar="يفتح هذا الرسالة في برنامج البريد لديك — لا يُرسَل شيء عبر هذا الموقع ولا يُخزَّن شيء هنا.">This opens the message in your own email client — nothing is sent through this site and nothing is stored here.</p>
+        <p class="form-note" data-en="This opens the message in your own email app. Nothing is sent or stored by this site." data-ar="يفتح هذا الرسالة في تطبيق البريد لديك. لا يُرسل هذا الموقع شيئاً ولا يخزّنه.">This opens the message in your own email app. Nothing is sent or stored by this site.</p>
       </form>
     </div>
   </div>
@@ -977,7 +921,7 @@
           <span class="brand-mark" aria-hidden="true">MA</span>
           <span data-en="Mohammed Altoum" data-ar="محمد التوم">Mohammed Altoum</span>
         </a>
-        <p data-en="IT Manager in Baghdad — infrastructure, Odoo ERP, Microsoft 365 and cybersecurity, plus the Flutter apps that extend them into the field." data-ar="مدير تقنية المعلومات في بغداد — البنية التحتية و Odoo ERP و Microsoft 365 والأمن السيبراني، إضافة إلى تطبيقات Flutter التي توسّعها إلى الميدان.">IT Manager in Baghdad — infrastructure, Odoo ERP, Microsoft 365 and cybersecurity, plus the Flutter apps that extend them into the field.</p>
+        <p data-en="IT Manager in Baghdad. Infrastructure, Odoo ERP, Microsoft 365 and security, plus the Flutter apps that take them into the field." data-ar="مدير تقنية المعلومات في بغداد. البنية التحتية و Odoo ERP و Microsoft 365 والأمن، إضافة إلى تطبيقات Flutter التي توسّعها إلى الميدان.">IT Manager in Baghdad. Infrastructure, Odoo ERP, Microsoft 365 and security, plus the Flutter apps that take them into the field.</p>
       </div>
 
       <nav class="foot-col" data-en-aria="Footer navigation" data-ar-aria="روابط التذييل" aria-label="Footer navigation">
@@ -1002,7 +946,7 @@
     </div>
 
     <div class="foot-bar">
-      <span data-en="© 2026 Mohammed Altoum — Baghdad, Iraq" data-ar="© ٢٠٢٦ محمد التوم — بغداد، العراق">© 2026 Mohammed Altoum — Baghdad, Iraq</span>
+      <span data-en="© 2026 Mohammed Altoum · Baghdad, Iraq" data-ar="© ٢٠٢٦ محمد التوم · بغداد، العراق">© 2026 Mohammed Altoum · Baghdad, Iraq</span>
       <span class="keep-mono">IT · ERP · Cloud · Security · Flutter</span>
       <button class="icon-btn lang-btn" type="button"
               data-en-aria="Switch the site to Arabic" data-ar-aria="تحويل الموقع إلى الإنجليزية"
@@ -1018,6 +962,6 @@
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mohammed Altoum","alternateName":"محمد التوم","url":"https://cv-res.moaxmohammed36.workers.dev/","image":"https://cv-res.moaxmohammed36.workers.dev/assets/images/portrait.webp","email":"mailto:mabdulla.alt@gmail.com","jobTitle":"IT Manager","description":"IT Manager in Baghdad, Iraq. IT infrastructure, Odoo ERP rollouts, Microsoft 365 and Active Directory, virtualisation, VoIP, cybersecurity and Flutter application development.","address":{"@type":"PostalAddress","addressLocality":"Baghdad","addressCountry":"IQ"},"worksFor":{"@type":"Organization","name":"Hilal Al-Sharq Co."},"knowsLanguage":[{"@type":"Language","name":"English"},{"@type":"Language","name":"Arabic"}],"knowsAbout":["IT Management","IT Infrastructure","Odoo ERP","Microsoft 365","Active Directory","Windows Server","VMware ESXi","Proxmox VE","FreePBX","Networking","Cybersecurity","Vulnerability Assessment","Flutter","Dart","Python"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Sudan University of Science and Technology"}],"sameAs":["https://www.linkedin.com/in/mohammed-abdallah28","https://github.com/moax342"]}</script>
 
-<script src="js/main.js" defer></script>
+<script src="js/main.js?v=3" defer></script>
 </body>
 </html>

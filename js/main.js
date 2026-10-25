@@ -124,10 +124,20 @@
   /* ══ 3. Mobile drawer ════════════════════════════════════════════════════ */
   var drawer = $('#drawer'), burger = $('#burger');
 
-  function setDrawer(open) {
+  /* The burger keeps a fixed "Menu" label; aria-expanded carries the state.
+     Focus moves into the drawer on open and back to the burger on close, so a
+     keyboard user never ends up tabbing through the page hidden behind it. */
+  function setDrawer(open, returnFocus) {
     if (!drawer || !burger) return;
+    if (drawer.classList.contains('open') === open) return;
     drawer.classList.toggle('open', open);
     burger.setAttribute('aria-expanded', String(open));
+    if (open) {
+      var first = $('a,button', drawer);
+      if (first) first.focus();
+    } else if (returnFocus) {
+      burger.focus();
+    }
   }
   if (burger) {
     burger.addEventListener('click', function () {
@@ -140,7 +150,7 @@
     });
   }
   addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') setDrawer(false);
+    if (e.key === 'Escape') setDrawer(false, true);
   });
   /* A drawer left open across the desktop breakpoint would hang over the page. */
   var wide = matchMedia('(min-width: 981px)');
@@ -148,8 +158,8 @@
   if (wide.addEventListener) wide.addEventListener('change', onWide);
   else if (wide.addListener) wide.addListener(onWide);
 
-  /* ══ 4. Scroll chrome: progress bar, nav border, active section ══════════ */
-  var bar = $('#progress'), nav = $('#nav'), toTop = $('#toTop');
+  /* ══ 4. Scroll chrome: nav border, back-to-top, active section ══════════ */
+  var nav = $('#nav'), toTop = $('#toTop');
   var navLinks = $$('.nav-link');
   var sections = navLinks
     .map(function (a) { return $(a.getAttribute('href')); })
@@ -160,9 +170,7 @@
   function paintScroll() {
     ticking = false;
     var y = scrollY;
-    var max = document.documentElement.scrollHeight - innerHeight;
 
-    if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(y / max, 1) : 0) + ')';
     if (nav) nav.classList.toggle('stuck', y > 8);
     if (toTop) toTop.classList.toggle('show', y > innerHeight * 0.9);
 
@@ -292,7 +300,6 @@
   /* ══ 9. Buttons ══════════════════════════════════════════════════════════ */
   $$('.theme-btn').forEach(function (b) { b.addEventListener('click', toggleTheme); });
   $$('.lang-btn').forEach(function (b) { b.addEventListener('click', toggleLang); });
-  $$('.print-btn').forEach(function (b) { b.addEventListener('click', function () { print(); }); });
 
   /* Nothing may be mid-animation when the print sheet is captured — a counter
      caught mid-tween would print a number that is simply wrong. */
@@ -302,5 +309,15 @@
       if (el.textContent !== target) el.textContent = target;
     });
   }
-  addEventListener('beforeprint', function () { revealAll(); snapCounters(); });
+  /* Collapsed sections (earlier roles) must make it onto paper too. */
+  var closedForPrint = [];
+  addEventListener('beforeprint', function () {
+    revealAll(); snapCounters();
+    closedForPrint = $$('details:not([open])');
+    closedForPrint.forEach(function (d) { d.open = true; });
+  });
+  addEventListener('afterprint', function () {
+    closedForPrint.forEach(function (d) { d.open = false; });
+    closedForPrint = [];
+  });
 })();
